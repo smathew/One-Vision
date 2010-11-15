@@ -1,0 +1,28 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+    <h2>Online Services</h2>
+   <p class="last">One Vision Federal Credit Union has a number of additional services to make your life easier and more convenient. That is what we strive to do here at One Vision, make life easier for our members and owners. The following services are designed to give you a variety of financial options as well as some bonus services to make life better for you.</p>
+   
+    <p class="heading"><a name="online"></a>ONlinE Vision (Online Banking)</p>
+    <p>ONlinE Vision is our exciting home banking system. With your phONE Vision (Audio Response System) Personal Identification Number (PIN) you can see your accounts, view transactions, and even transfer funds - all at the touch of your fingertips. You can make transfers between your accounts, loan payments, account inquiries, view transaction history, verify of cleared checks, and request withdrawals (a check is mailed to you) any time you want. There is no fee for using the basic functions of ONlinE Vision. ONlinE Vision allows you to span your transaction activity! For your protection, we use the best available technology in security, firewalls and encryption. For your convenience, ONlinE Vision allows downloading to either Quicken or Microsoft Money. Visit ONlinE Vision today!</p>
+    <p class="last"><%= link_to "&raquo; Go To ONlinE Vision Now!", root_path %></p>
+    
+    <p class="heading"><a name="epay"></a>ePay With Vision (Online Bill Pay)</p>
+    <p>Tired of spending your valuable time sitting down and writing checks each month to pay your bills? With ePay With Vision, we can save you time and money by allowing you to pay bills online. Set up your monthly bills in the system and with just a click the bills will be paid for you. All you need is a checking (share draft) account with One Vision Federal Credit Union to take advantage of this wonderful FREE and convenient service. You can access ePay With Vision through ONlinE Vision. Get started today!</p>
+    <p class="last"><%= link_to "&raquo; ePay Demo", "https://www.billpaysite.com/V2/Demo.aspx?instID=38807" %></p>
+    
+    <p class="heading"><a name="epayplus"></a>ePay With Vision Plus</p>
+    <p>For $5.00 per month, you can enjoy a version of ePay With Vision that has even more convenient features. Extra features include the ability to send money to anyone in the US with an e-mail address and bank account, ability to move money from your One Vision account to any other financial institution, bill payment reminder e-mails, and much more. Check out ePay With Vision Plus today!</p>
+    <p class="last"><%= link_to "&raquo; ePay Demo", "https://www.billpaysite.com/V2/Demo.aspx?instID=38807" %></p>    
+    
+    <a name="apps"></a>
+    <p><%= link_to "APPLY FOR MEMBERSHIP ONLINE", new_memberapp_path %></p>
+    <p><%= link_to "APPLY FOR A LOAN ONLINE", new_loanapp_path %></p>
+    <p><%= link_to "APPLY FOR A MORTGAGE LOAN ONLINE", "http://www.mycumortgagehomeloans.com/default.asp?siteId=67AA1C19-D850-4986-898D-777DD315B995", :rel=>"confirm external" %></p>
+    <p><%= link_to "APPLY FOR A VISA&reg; CREDIT CARD ONLINE", new_visarequest_path %></p>
+    <p><%= link_to "ORDER CHECKS ONLINE", "https://reorder.libertysite.com/default.aspx", :rel=>"confirm external" %></p>    
+    </div>
+    <div id="inner_right">
+		<%= render :partial => "layouts/quickrates" %>
+    </div>
+</div>

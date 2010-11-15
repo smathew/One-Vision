@@ -1,0 +1,92 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+    <h2>Current Rates</h2>
+    <p>One Vision FCU offers the following competitive rates to our members (click for current rates): </p>
+   	<ul>
+    	<li><%= link_to "Share Rates", share_rates_path %></li>
+        <li><%= link_to "Share and IRA Certificates", ira_certificates_path %></li>
+        <li><%= link_to "Vision Starter Share Certificates", vision_certificates_path %></li>
+        <li><%= link_to "Loan Rates", auto_loans_path %>
+        	<ul>
+            	<li><%= link_to "Automobile Loans", auto_loans_path %></li>
+                <li><%= link_to "Motorcycles, Boats, RVs, Campers, ATV's, Jet Ski", vehicle_loans_path %></li>
+                <li><%= link_to "Real Estate Loans", home_loans_path %></li>
+                <li><%= link_to "Other Loans", other_loans_path %></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>For important information about One Vision FCU dividend rates, see our <%= link_to "Truth in Savings Disclosure", truthinsavings_path %> &amp; <%= link_to "Fee Schedule", cufees_path %>.</p>
+	
+	<!-- OTHER LOANS -->
+
+  <table class="ratestable" cellpadding="0" cellspacing="0">
+    	    <tr>
+            <th colspan="4">Other Loans</th>
+            </tr>
+        <tr>
+        	<td class="description">Description</td>
+            <td>Term</td>
+            <td>Annual Percentage Rate</td>
+            <td>Sample Payment</td>
+        </tr>
+        <tr>
+        	<td colspan="4"><p class="left bold">Signature</p></td>
+        </tr>
+        <tr>
+        	<td>Revolving</td>
+            <td>Line of Credit</td>
+            <td>10.00%</td>
+            <td>3% of amount borrowed</td>
+        </tr>
+        <tr>
+        	<td>Open End</td>
+            <td>Line of Credit</td>
+            <td>10.00%</td>
+            <td>3% of amount borrowed</td>
+        </tr>      
+        <tr>
+        	<td colspan="4"><p class="left bold">Share Secured **</p></td>
+        </tr>   
+	                     
+        <tr>
+        	<td>100% Secured</td>
+            <td>Quarterly Interest Payments required.</td>
+            <td>Share Rate <span class="nobreak">plus 2%**</span> </td>
+            <td>Based on Terms</td>
+
+        </tr>
+        <tr>
+        	<td>Share Certificate <span class="nobreak">Secured **</span></td>
+            <td>Quarterly Interest Payments required.</td>
+            <td>Certificate Rate <span class="nobreak">plus 2%**</span></td>
+            <td>Based on Terms</td>
+        </tr> 
+        <tr>
+        	<td colspan="4"><p class="left bold">Credit Cards</p></td>
+        </tr>             
+        <tr>
+        	<td>Please click here for Important Disclosure &amp; Application</td>
+            <td>Visa&reg; Revolving</td>
+            <td class="visa">8.90%</td>
+            <td>3% of Balance</td>
+        </tr>   
+	                   
+
+<tr>
+        	<td colspan="4" class="highlight">
+            <p class="left">The above Annual Percentage Rates represent the lowest rate offered for each specific described loan type. Your rate may be different and is based on your personal credit data. 4% APR Minimum. Above payments include single coverage of Life and Disability Insurance.</p>
+<p class="left">LTV ­ Loan to Value ­ maximum percent of the value of the home One Vision FCU will lend you. </p>
+<p class="left">Rates and terms are subject to change without notice.</p>
+<p class="left">Rates Shown are effective 11/01/2010.</p>
+<p class="left">Rates and terms are quoted for comparison purposes only, other restrictions may apply, call a Loan Officer for a quote for your personal needs at 1-812-945-4600.</p>
+<p class="left">**Secured rates are based on the current dividend rate for Prime Shares and Share Certificates.</p>
+		  </td>
+        </tr>                                
+    </table>
+	</div>
+    
+    <div id="inner_right">
+		<%= render :partial =>"layouts/quickrates" %>
+    </div>
+</div>

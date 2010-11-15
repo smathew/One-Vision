@@ -1,0 +1,43 @@
+<div id="pagewrapper" class="clearfix">
+
+	<div id="inner_left">
+    <h2>Contact Us</h2>
+    <div id="contact">
+    	<ul>
+        	<li class="address"><p><span class="bold">Address:</span><br />
+            One Vision Federal Credit Union<br />
+            206 W. Lewis &amp; Clark Pkwy<br />
+            Clarksville, IN 47129<br /><br />
+            New Albany Branch<br />
+            2441 State Street<br />
+            New Albany, IN 47150</p></li>
+          <li class="phone">
+            <p><span class="bold">Phone:</span><br />
+            Clarksville Office<br />
+            1-812-945-4600<br /><br />
+            New Albany Branch<br />
+            1-812-948-7998</p>
+          </li>
+            <li class="fax">
+            <p><span class="bold">Fax:</span><br />
+            Clarksville Office<br />
+            1-812-945-4329<br /><br />
+            New Albany Branch<br />
+            1-812-948-6649</p>
+            </li>
+          <li class="email">
+            <p><span class="bold">Email:</span><br />
+            <%= mail_to "onevisionfcu@onevisionfcu.org", "onevisionfcu@onevisionfcu.org" %></p>
+            </li>
+        </ul>
+        
+        <p><span class="bold">Audio Response:</span><br />1-812-945-2331</p>
+        <p><span class="bold">Emergency Notification Numbers:</span><br />
+        If you lose or have your VISA&reg; credit card stolen, call 1-800-289-5939.<br />
+If you lose or have your STAR or Debit MasterCard&trade; stolen, call 1-800-523-4175.</p>
+    </div>
+    </div>
+    <div id="inner_right">
+		<%= render :partial => 'layouts/quickrates' %>
+    </div>
+</div>

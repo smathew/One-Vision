@@ -1,0 +1,429 @@
+<style type="text/css">
+.split33 {
+	width: 30%;
+	float: left;
+}
+.split50 {
+	width: 47%;
+	float: left;
+	margin-right: 1em;
+}
+</style>
+
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+		<div id="forms">
+			<h2>Loan Application</h2>
+			<p>
+				For non-mortgage loans only.&nbsp; To apply for a mortgage loan please E-mail us <%= link_to "here", contact_path %>. 
+			</p>
+			<p>
+				<strong>
+					In order to apply for all other types of loans, fill out the following application in its entirety.&nbsp; A
+					Loan officer will contact you either by phone or email within 24 hours.&nbsp; You must first be a member of
+					One Vision FCU prior to your loan being approved.
+				</strong>
+			</p>
+			<p>
+				NOTE: One Vision FCU has a secure site for protection and privacy.
+			</p>
+			<% form_for(@loanapp) do |f| %>
+			<%= f.error_messages %>
+				<fieldset>
+					<h3>CREDIT UNION LOAN Features applied for:</h3>
+                    
+					<div class="clearfix">
+                    <table class="border">
+                    <tr>
+                    <td>
+						<div class="split33">
+							<%= f.radio_button("loan_type", "Line of Credit") %>
+							<label for="loan_type_loc">Line of Credit:</label>
+							<br />
+							<label for="credit_limit">Limit $</label>
+							<%= f.text_field :line_of_credit_limit, :size => 15 %>
+						</div>
+						<div class="split33">
+							<%= f.radio_button("loan_type", "Credit Limit Increase") %>
+							<label for="loan_type_inc">Credit Limit Increase:</label>
+							<br />
+							<label for="credit_increase">Limit $</label>
+							<%= f.text_field :credit_increase_limit, :size => 15 %>
+						</div>
+						<div class="split33">
+							<%= f.radio_button("loan_type", "Collateral Secured") %>
+							<label for="loan_type_collateral">Collateral Secured:</label>
+							<br />
+							<label for="initial_amt_requested">Limit $</label>
+							<%= f.text_field :collateral_secured_limit, :size => 15 %>
+						</div>
+						
+						<div class="split33">
+						<br /><br />
+							<label for="loan_purpose">Purpose of Loan</label>
+							<%= f.text_field :purpose_of_loan, :size => 15 %>
+						</div>
+						<div class="split33">
+						<br /><br />
+							<label for="collateral_offered">Collateral Offered</label>
+							<%= f.text_field :collateral_offered, :size => 15 %>
+						</div>
+						<div class="split33">
+						<br /><br />
+							<label for="collateral_owned_by">Owned By</label>
+							<%= f.text_field :owned_by, :size => 15 %>
+						</div>
+					
+					<p class="bold">
+					MARRIED APPLICANTS MAY APPLY FOR INDIVIDUAL ACCOUNTS.&nbsp; INDICATE BELOW THE TYPE OF CREDIT WANTED.
+					</p>
+					<%= f.radio_button("type_of_credit", "Individual Credit") %>
+					<label for="account_type_ind">
+						INDIVIDUAL CREDIT: Complete Applicant Section.&nbsp; Complete other section if the following applies: You live in a community property state (AZ, CA, ID, NM, NV, P.R., TX, WA, WI) or your spouse will use the account.&nbsp; You are relying on your spouse/Co-Applicant&#39;s income as a source of repayment.
+					</label>
+					<br />
+					<%= f.radio_button("type_of_credit", "Joint Credit") %>
+					<label for="account_type_joint">
+						JOINT CREDIT: Provide Information about both of you.
+					</label>
+                    </div>
+                  </td>
+                 </tr>
+                </table>
+               
+					<h3>INFORMATION CONCERNING CREDIT INSURANCE</h3>
+                    <table class="border">
+                    <tr>
+                    <td>
+					<p>
+						Group Credit Insurance is available on loans made to Credit Union members.&nbsp; Insurance is voluntary and not required
+						to obtain credit.&nbsp; You are not eligible for life insurance coverage, if you have attained or are over the age of 
+						70.&nbsp; You are not eligible for disability insurance coverage, if you have attained or are over the age of 66.
+					</p>
+					<p>
+						<%= f.radio_button("single_life_insurance", "Yes") %>
+						<label for="insurance_single_yes">Yes</label>
+						<%= f.radio_button("single_life_insurance", "No") %>
+						<label for="insurance_single_no">No</label>
+						&nbsp;Single Credit Life Insurance&nbsp;
+						<label for="insurance_single_age">Age</label>
+						<%= f.text_field :single_life_insurance_age, :size => 2, :maxlength => 2 %>				
+					</p>
+					<p>
+						<%= f.radio_button("joint_life_insurance", "Yes") %>
+						<label for="insurance_joint_yes">Yes</label>
+						<%= f.radio_button("joint_life_insurance", "No") %>
+						<label for="insurance_joint_no">No</label>
+						&nbsp;Joint Credit Life Insurance&nbsp;
+						<label for="insurance_joint_age">Age</label>
+						<%= f.text_field :joint_life_insurance_age, :size => 2, :maxlength => 2 %>						
+					</p>
+					<p>
+						<%= f.radio_button("credit_disability_insurance", "Yes") %>
+						<label for="insurance_disability_yes">Yes</label>
+						<%= f.radio_button("credit_disability_insurance", "No") %>
+						<label for="insurance_disability_no">No</label>
+						&nbsp;Credit Disability Insurance&nbsp;
+						<label for="insurance_disability_age">Age</label>
+						<%= f.text_field :credit_disability_insurance_age, :size => 2, :maxlength => 2 %>						
+					</p>
+					<p>
+						The Credit Union will disclose the cost of this Voluntary Insurance to you if you checked Yes.&nbsp; A separate
+						election disclosing the terms and conditions of the Credit Insurance must be signed for the coverage to be
+						effective.&nbsp; If you have attained or are over the ages indicated, you are not eligible for coverage.
+					</p>
+                    </td></tr></table>
+                    
+					<h3>TELL US ABOUT YOURSELF</h3>
+					<div class="clearfix">
+						<table class="app">
+							<tr class="gray">
+								<td></td>
+								<td><h4 class="center">Applicant</h4></td>
+								<td><h4 class="center">Co-Applicant</h4></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Name:</label></td>
+								<td><%= f.text_field :applicant_name, :size => 15 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_name, :size => 15 %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">CU Account #:</label></td>
+								<td><%= f.text_field :applicant_account_number, :size => 15 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_account_number, :size => 15 %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Social Security #:</label></td>
+								<td><%= f.text_field :applicant_ssn, :maxlength => 11, :size => 15 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_ssn, :maxlength => 11, :size => 15 %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name"> Please indicate your marital status if you are applying for Joint Credit, secured credit, or if
+										you live in a community property state:</label></td>
+								<td><%= f.radio_button("applicant_marital_status", "Married") %>
+										<label for="app_marital_status_married">Married</label>
+										<%= f.radio_button("applicant_marital_status", "Separated") %>
+										<label for="app_marital_status_separated">Separated</label>
+										<br />
+										<%= f.radio_button("applicant_marital_status", "Unmarried") %>
+										<label for="app_marital_status_unmarried">Unmarried (Single - Divorced - Widowed)</label></td>
+								<td class="bkgcolor"><%= f.radio_button("coapplicant_marital_status", "Married") %>
+										<label for="app_marital_status_married">Married</label>
+										<%= f.radio_button("coapplicant_marital_status", "Separated") %>
+										<label for="app_marital_status_separated">Separated</label>
+										<br />
+										<%= f.radio_button("coapplicant_marital_status", "Unmarried") %>
+										<label for="app_marital_status_unmarried">Unmarried (Single - Divorced - Widowed)</label></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Driver&#39;s License #:</label></td>
+								<td><%= f.text_field :applicant_drivers_license, :size => 15 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_drivers_license, :size => 15 %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Driver&#39;s License State:</label></td>
+								<td><%= f.select( :applicant_drivers_license_state,
+								{ "Alabama" => "AL", 
+								  "Alaska" => "AK", 
+								  "Arizona" => "AZ", 
+								  "Arkansas" => "AR", 
+								  "California" => "CA", 
+								  "Colorado" => "CO",
+								  "Connecticut" => "CT", 
+								  "Delaware" => "DE", 
+								  "District Of Columbia" => "DC", 
+								  "Florida" => "FL", 
+								  "Georgia" => "GA", 
+								  "Hawaii" => "HI",
+								  "Idaho" => "ID", 
+								  "Illinois" => "IL", 
+								  "Indiana" => "IN", 
+								  "Iowa" => "IO", 
+								  "Kansas" => "KS", 
+								  "Kentucky" => "KY",
+								  "Louisiana" => "LA", 
+								  "Maine" => "ME", 
+								  "Maryland" => "MD", 
+								  "Massachusetts" => "MA", 
+								  "Michigan" => "MI", 
+								  "Minnesota" => "MN",
+								  "Mississippi" => "MS", 
+								  "Missouri" => "MO", 
+								  "Montana" => "MT", 
+								  "Nebraska" => "NE", 
+								  "Nevada" => "NV", 
+								  "New Hampshire" => "NH",
+								  "New Jersey" => "NJ", 
+								  "New Mexico" => "NM", 
+								  "New York" => "NY", 
+								  "North Carolina" => "NC", 
+								  "North Dakota" => "ND", 
+								  "Ohio" => "OH",
+								  "Oklahoma" => "OK", 
+								  "Oregon" => "OR", 
+								  "Pennsylvania" => "PA", 
+								  "Rhode Island" => "RI", 
+								  "South Carolina" => "SC", 
+								  "South Dakota" => "SD",
+								  "Tennessee" => "TN", 
+								  "Texas" => "TX", 
+								  "Utah" => "UT", 
+								  "Vermont" => "VT", 
+								  "Virginia" => "VA", 
+								  "Washington" => "WA",
+								  "West Virginia" => "WV",
+								  "Wisconsin" => "WI",
+								  "Wyoming" => "WY"
+								 }) %>
+								</td>
+								<td class="bkgcolor">
+								<%= f.select( :coapplicant_drivers_license_state,
+								{ "Alabama" => "AL", 
+								  "Alaska" => "AK", 
+								  "Arizona" => "AZ", 
+								  "Arkansas" => "AR", 
+								  "California" => "CA", 
+								  "Colorado" => "CO",
+								  "Connecticut" => "CT", 
+								  "Delaware" => "DE", 
+								  "District Of Columbia" => "DC", 
+								  "Florida" => "FL", 
+								  "Georgia" => "GA", 
+								  "Hawaii" => "HI",
+								  "Idaho" => "ID", 
+								  "Illinois" => "IL", 
+								  "Indiana" => "IN", 
+								  "Iowa" => "IO", 
+								  "Kansas" => "KS", 
+								  "Kentucky" => "KY",
+								  "Louisiana" => "LA", 
+								  "Maine" => "ME", 
+								  "Maryland" => "MD", 
+								  "Massachusetts" => "MA", 
+								  "Michigan" => "MI", 
+								  "Minnesota" => "MN",
+								  "Mississippi" => "MS", 
+								  "Missouri" => "MO", 
+								  "Montana" => "MT", 
+								  "Nebraska" => "NE", 
+								  "Nevada" => "NV", 
+								  "New Hampshire" => "NH",
+								  "New Jersey" => "NJ", 
+								  "New Mexico" => "NM", 
+								  "New York" => "NY", 
+								  "North Carolina" => "NC", 
+								  "North Dakota" => "ND", 
+								  "Ohio" => "OH",
+								  "Oklahoma" => "OK", 
+								  "Oregon" => "OR", 
+								  "Pennsylvania" => "PA", 
+								  "Rhode Island" => "RI", 
+								  "South Carolina" => "SC", 
+								  "South Dakota" => "SD",
+								  "Tennessee" => "TN", 
+								  "Texas" => "TX", 
+								  "Utah" => "UT", 
+								  "Vermont" => "VT", 
+								  "Virginia" => "VA", 
+								  "Washington" => "WA",
+								  "West Virginia" => "WV",
+								  "Wisconsin" => "WI",
+								  "Wyoming" => "WY"
+								 }) %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Birth Date:</label></td>
+								<td><%= f.text_field :applicant_date_of_birth, :size => 15, :maxlength => 10 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_date_of_birth, :size => 15, :maxlength => 10 %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Home Phone:</label></td>
+								<td><%= f.text_field :applicant_home_phone, :size => 15, :maxlength => 12 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_home_phone, :size => 15, :maxlength => 12 %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Business Phone:</label></td>
+								<td><%= f.text_field :applicant_business_phone, :size => 15, :maxlength => 12 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_business_phone, :size => 15, :maxlength => 12 %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Email Address:</label></td>
+								<td><%= f.text_field :applicant_email_address, :size => 15 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_email_address, :size => 15 %></td>
+							</tr>
+							<tr class="gray"><td colspan="3" align="center"><h4 class="center">Debts</h4></td></tr>
+							<tr>
+								<td><label for="app_name">Mortgage/Rent owed to:</label></td>
+								<td><%= f.text_field :applicant_mortgage, :size => 15 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_mortgage, :size => 15 %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Balance (Mortgage only):</label></td>
+								<td><%= f.text_field :applicant_mortgage_balance, :size => 15 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_mortgage_balance, :size => 15 %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Monthly Payment:</label></td>
+								<td><%= f.text_field :applicant_monthly_payment, :size => 15 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_monthly_payment, :size => 15 %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Current APR % (Mortgage only):</label></td>
+								<td><%= f.text_field :applicant_current_apr, :size => 15 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_current_apr, :size => 15 %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Person Responsible for Payment:</label></td>
+								<td><%= f.text_field :applicant_payment_responsible, :size => 15 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_payment_responsible, :size => 15 %></td>
+							</tr>
+							<tr class="gray">
+								<td colspan="3" align="center">For all other loans and payments:</td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Total monthly payments:</label></td>
+								<td><%= f.text_field :applicant_monthly_payments, :size => 15 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_monthly_payments, :size => 15 %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Total monthly balances:</label></td>
+								<td><%= f.text_field :applicant_monthly_balances, :size => 15 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_monthly_balances, :size => 15 %></td>
+							</tr>
+							<tr class="gray"><td colspan="3" align="center"><h4 class="center">INCOME</h4></td></tr>
+							<tr>
+								<td><label for="app_name">Employer:</label></td>
+								<td><%= f.text_field :applicant_employer, :size => 15 %></td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_employer, :size => 15 %></td>
+							</tr>
+							<tr>
+								<td><label for="app_name">Income: </label></td>
+								<td>$ <%= f.text_field :applicant_income, :size => 12 %><br /><%= f.radio_button("applicant_income_type", "Net") %>
+										<label for="app_income_type_net">Net</label>
+										<%= f.radio_button("applicant_income_type", "Gross") %>
+										<label for="app_income_type_gross">Gross</label>
+										<hr />
+										<%= f.radio_button("applicant_income_frequency", "Annual") %>
+										<label for="app_income_freq_annual">Annual</label>
+										<%= f.radio_button("applicant_income_frequency", "Monthly") %>
+										<label for="app_income_freq_monthly">Monthly</label>
+										<%= f.radio_button("applicant_income_frequency", "Bi-weekly") %>
+										<label for="app_income_freq_biweekly">Bi-weekly</label>
+										<%= f.radio_button("applicant_income_frequency", "Weekly") %>
+										<label for="app_income_freq_weekly">Weekly</label></td>
+								<td class="bkgcolor">$ <%= f.text_field :coapplicant_income, :size => 12 %><br /><%= f.radio_button("coapplicant_income_type", "Net") %>
+										<label for="app_income_type_net">Net</label>
+										<%= f.radio_button("coapplicant_income_type", "Gross") %>
+										<label for="app_income_type_gross">Gross</label>
+										<hr />
+										<%= f.radio_button("coapplicant_income_frequency", "Annual") %>
+										<label for="app_income_freq_annual">Annual</label>
+										<%= f.radio_button("coapplicant_income_frequency", "Monthly") %>
+										<label for="app_income_freq_monthly">Monthly</label>
+										<%= f.radio_button("coapplicant_income_frequency", "Bi-weekly") %>
+										<label for="app_income_freq_biweekly">Bi-weekly</label>
+										<%= f.radio_button("coapplicant_income_frequency", "Weekly") %>
+										<label for="app_income_freq_weekly">Weekly</label></td>
+							</tr>
+							<tr class="gray"><td colspan="3" align="center">Other Income: (Notice: Alimony, child support or separate maintenance income need not be revealed if you do not have it considered as a basis for repaying this obligation.)</td></tr>
+							<tr>
+								<td><label for="app_name">Source:</label></td>
+								<td><%= f.text_field :applicant_other_income_source, :size => 15 %><br /><br />
+									<label for="app_othersource_amount">$</label>
+										<%= f.text_field :applicant_other_income, :size => 10, :maxlength => 10 %>
+										
+										<%= f.radio_button("applicant_other_income_frequency", "Annual") %>
+										<label for="app_othersource_amount_period_annual">Annual</label>
+										<%= f.radio_button("applicant_other_income_frequency", "Monthly") %>
+										<label for="app_othersource_amount_period_monthly">Monthly</label>
+										<%= f.radio_button("applicant_other_income_frequency", "Hourly") %>
+										<label for="app_othersource_amount_period_hourly">Hourly</label>
+								</td>
+								<td class="bkgcolor"><%= f.text_field :coapplicant_other_income_source, :size => 15 %><br /><br />
+									<label for="app_othersource_amount">$</label>
+										<%= f.text_field :coapplicant_other_income, :size => 10, :maxlength => 10 %>
+										
+										<%= f.radio_button("coapplicant_other_income_frequency", "Annual") %>
+										<label for="app_othersource_amount_period_annual">Annual</label>
+										<%= f.radio_button("coapplicant_other_income_frequency", "Monthly") %>
+										<label for="app_othersource_amount_period_monthly">Monthly</label>
+										<%= f.radio_button("coapplicant_other_income_frequency", "Hourly") %>
+										<label for="app_othersource_amount_period_hourly">Hourly</label></td>
+							</tr>
+						</table>
+					</div>
+			<p class="center">
+				Please call the Loan Department at 1-812-945-4600 on the following business day for status of your application.
+			</p>
+			<p class="center">
+						<%= f.submit "Submit Application" %>
+						<input type="reset" value="Clear Form" />
+					</p>
+				</fieldset>
+		<% end %>
+		</div>
+	</div>
+	<div id="inner_right">
+		<%= render :partial => "layouts/quickrates" %>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+    <h2>Current Rates</h2>
+    <p>One Vision FCU offers the following competitive rates to our members (click for current rates): </p>
+   	<ul>
+    	<li><%= link_to "Share Rates", share_rates_path %></li>
+        <li><%= link_to "Share and IRA Certificates", ira_certificates_path %></li>
+        <li><%= link_to "Vision Starter Share Certificates", vision_certificates_path %></li>
+        <li><%= link_to "Loan Rates", auto_loans_path %>
+        	<ul>
+            	<li><%= link_to "Automobile Loans", auto_loans_path %></li>
+                <li><%= link_to "Motorcycles, Boats, RVs, Campers, ATV's, Jet Ski", vehicle_loans_path %></li>
+                <li><%= link_to "Real Estate Loans", home_loans_path %></li>
+                <li><%= link_to "Other Loans", other_loans_path %></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>For important information about One Vision FCU dividend rates, see our <%= link_to "Truth in Savings Disclosure", truthinsavings_path %> &amp; <%= link_to "Fee Schedule", cufees_path %>.</p>
+	
+	<!-- REAL ESTATE LOANS -->
+<table class="ratestable" cellpadding="0" cellspacing="0">
+    	  <tr>
+          <th colspan="3">Real Estate Rates</th>
+          
+          <td class="beige"><%= image_tag "ehl.jpg", :alt=>"", :width=>70, :height=>80 %><br />We do business in accordance with the Federal Fair Housing Law and the Equal Credit Opportunity Act. </td></tr>
+                  <tr>
+        	<th colspan="4">First Mortgage</th>
+        </tr>
+        <tr>
+        	<td class="description">Description</td>
+            <td>Term</td>
+            <td>Annual Percentage Rate</td>
+            <td>Sample Payment</td>
+        </tr>
+
+        <tr>
+        	<td>Purchase/Refinance</td>
+            <td>Up to 30 years</td>
+            <td>Call for current market rates</td>
+            <td>Call for a quote</td>
+        </tr>
+        <tr>
+        	<td>Non-Purchase up to 80% LTV</td>
+            <td>Up to 30 years</td>
+            <td>Call for current market rates</td>
+            <td>Call for a quote</td>
+        </tr>      
+    <tr>
+        	<th colspan="4">Second Mortgage</th>
+        </tr>
+        <tr>
+        	<td>Up to 80% LTV</td>
+            <td>Up to 15 years</td>
+            <td>Call for current market rates</td>
+            <td>Call for a quote</td>
+        </tr>
+    <tr>
+        	<th colspan="4">Home Equity Line of Credit</th>
+        </tr>
+        <tr>
+        	<td>Up to 100% LTV</td>
+            <td>Up to 15 years</td>
+            <td>Variable Rate based on Prime Rate</td>
+            <td>Call for a quote</td>
+        </tr>        
+     
+		<tr>
+        	<td colspan="4" class="highlight">
+            <p class="left">Rates Shown are effective 11/01/2010.</p>
+<p class="left">Rates and terms are subject to change without notice.</p>
+<p class="left">Rates and terms are quoted for comparison purposes only, other restrictions may apply, call a Loan Officer for a quote for your personal needs at 1-812-945-4600.</p>
+<p class="left">LTV - Loan to Value - maximum percent of the value of the home One Vision FCU will lend you.</p>
+		  </td>
+        </tr>                                
+    </table>     
+<!-- END REAL ESTATE LOANS -->
+	</div>
+    
+    <div id="inner_right">
+		<%= render :partial =>"layouts/quickrates" %>
+    </div>
+</div>

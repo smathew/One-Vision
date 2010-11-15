@@ -1,0 +1,74 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+		<h2>FREE Discount Prescription Drug Card!</h2>
+      <p>This program is being provided to you and your family to help lower your prescription drug costs.  Simply create and print your <span class="underline">FREE</span> Prescription
+      Drug Card below and receive a savings of up to 75% (discounts average roughly 30%) at more than 54,000 national and regional pharmacies.  This card can be used as your primary plan and/or it can be used on prescriptions not covered by your insurance plan.  This program also includes other value added programs which will be listed on the card.  Please enter your name and e-mail address in the box below and we will generate a printable membership card for you (no application/enrollment or eligibility required).  This program has &quot;LOWEST PRICE&quot; logic to guarantee that you get the best deal on your prescriptions.  (You pay the lower of a discount off Average Wholesale Price - AWP, discount off MAC Pricing, or Pharmacy Promotional/Retail price.)  This card is pre-activated and can be used immediately!</p>
+
+
+<div id="pharm">
+      <table>
+  			  <tr>
+   			    <td><form id="cardCreatorForm" method="post" action="http://net-shapers.com/unarxcardcreator/createdrugcardtemplate-restat.php">
+                <fieldset>
+                      <input name="franchise" type="hidden" value="20000" />
+					  <input name="program" type="hidden" value="UNARxCard" />
+					  <input name="rxgrp" type="hidden" value="ASMR2OVFCU" />
+					  <input name="fromaddress" type="hidden" value="cs@unarxcard.com" />
+					  <input name="disableAdditionalSavings" type="hidden" value="1" />
+					  <input name="specialAdditionalSavings" type="hidden" value="CreditUnions" />
+        <table>
+          <tr>
+ 
+            <td>
+            <table>
+                <tr> 
+                  <td colspan="2" class="bold red">CARD INFORMATION</td>
+                </tr>
+                <tr> 
+                  <td class="first">First Name</td>
+                  <td><input type="text" name="firstName" /></td>
+ 
+                </tr>
+                <tr> 
+                  <td class="first">Last Name</td>
+                  <td><input type="text" name="lastName" />
+                    </td>
+                </tr>
+                <tr> 
+                  <td class="first">Email</td>
+                   <td><input type="text" name="email" /></td>
+                </tr>
+                <tr class="center"> 
+                  <td colspan="2" class="red center"><input type="submit" name="Submit" value="Create Prescription Card" />
+                  </td>
+                </tr>
+
+              </table></td>
+ 
+          </tr>
+          <tr>
+            <td class="center disclaimer"><span class="bold">Note: 
+                You can put NONE in e-mail box if you don&#8217;t want updates. 
+                </span><br />
+                &copy;
+                United Networks of America<br />
+                Powered by <%= link_to "UNA Rx Card", "http://unarxcard.com", :rel=>"external" %>
+              </td>
+ 
+          </tr>
+        </table>
+
+					</fieldset>
+				  </form></td>
+		</tr>
+		      </table>
+
+  </div>            
+    <p class="center"><%= image_tag "pharmcard_programs.jpg", :alt=>"" %></p>
+    <p class="center"><%= image_tag "pharmcard_participating.jpg", :alt=>"" %></p>
+    </div>
+    
+    <div id="inner_right">
+		<%= render :partial => 'layouts/quickrates' %>
+    </div>
+</div>

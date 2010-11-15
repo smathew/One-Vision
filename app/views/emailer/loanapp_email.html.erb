@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Online Loan Application</title>
+	<style>
+		td { 
+		font : normal small-caps 8pt 'Trebuchet MS',Verdana, Geneva, Arial, Helvetica, sans-serif; 
+		padding: 2px; 
+		} 
+	</style>
+</head>
+<body>
+	<table border="0">
+		<tr><td colspan="2"><h3>Loan Application</h3></td></tr>
+		<tr><td colspan="2" bgcolor="#993300"><font color="white" face="verdana" size="2"><strong>----- [ LOAN APPLICATION ] ---------------</strong></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Date Submitted : </font></td><td bgcolor="#fef7da"><%= Time.now.strftime("%A, %B %d, %Y, %H:%M:%S") %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Loan Type : </font></td><td bgcolor="#fef7da"><%= @app.loan_type %></td></tr>
+		<% if @app.loan_type == "Line of Credit" %>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Line of Credit Amount : </font></td><td bgcolor="#fef7da"><%= @app.line_of_credit_limit %></td></tr>
+		<% elsif @app.loan_type == "Credit Limit Increase" %>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Credit Increase Amount : </font></td><td bgcolor="#fef7da"><%= @app.credit_increase_limit %></td></tr>
+		<% elsif @app.loan_type == "Collateral Secured" %>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Initial Amount Requested : </font></td><td bgcolor="#fef7da"><%= @app.collateral_secured_limit %></td></tr>
+		<% end %>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Purpose of Loan : </font></td><td bgcolor="#fef7da"><%= @app.purpose_of_loan %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Collateral Offered : </font></td><td bgcolor="#fef7da"><%= @app.collateral_offered %>  	</td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Collateral Owned By : </font></td><td bgcolor="#fef7da"><%= @app.owned_by %>   	</td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Account Type : </font></td><td bgcolor="#fef7da"><%= @app.type_of_credit %></td></tr>
+		
+		<tr><td colspan="2" bgcolor="#993300"><font color="white" face="verdana" size="2"><strong>----- [ INSURANCE OPTIONS ] ---------------</strong></td></tr>
+		<% if !@app.single_life_insurance.blank? %>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Single Insurance : </font></td><td bgcolor="#fef7da"><%= @app.single_life_insurance %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Single Insurance Age : </font></td><td bgcolor="#fef7da"><%= @app.single_life_insurance_age %> </td></tr>
+		<% end %>
+		<% if !@app.joint_life_insurance.blank? %>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Joint Insurance : </font></td><td bgcolor="#fef7da"><%= @app.joint_life_insurance %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Joint Insurance Age : </font></td><td bgcolor="#fef7da"><%= @app.joint_life_insurance_age %>	</td></tr>
+		<% end %>
+		<% if !@app.credit_disability_insurance.blank? %>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Disability Insurance : </font></td><td bgcolor="#fef7da"><%= @app.credit_disability_insurance %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Disability Insurance Age : </font></td><td bgcolor="#fef7da"><%= @app.credit_disability_insurance_age %></td></tr>		
+		<% end %>
+		
+		<tr><td colspan="2" bgcolor="#993300"><font color="white" face="verdana" size="2"><strong>----- [ APPLICANT INFORMATION ] ---------------</strong></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Name : </font></td><td bgcolor="#fef7da"><%= @app.applicant_name %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Account Number : </font></td><td bgcolor="#fef7da"><%= @app.applicant_account_number %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">SSN : </font></td><td bgcolor="#fef7da"><%= @app.applicant_ssn %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Marital Status : </font></td><td bgcolor="#fef7da"><%= @app.applicant_marital_status %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Driver's License / State : </font></td><td bgcolor="#fef7da"><%= @app.applicant_drivers_license %> / <%= @app.applicant_drivers_license_state %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">BirthDate : </font></td><td bgcolor="#fef7da"><%= @app.applicant_date_of_birth %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Home Phone : </font></td><td bgcolor="#fef7da"><%= @app.applicant_home_phone %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Work Phone : </font></td><td bgcolor="#fef7da"><%= @app.applicant_business_phone %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Email Address : </font></td><td bgcolor="#fef7da"><%= @app.applicant_email_address %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Mortgage : </font></td><td bgcolor="#fef7da"><%= @app.applicant_mortgage %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Balance : </font></td><td bgcolor="#fef7da"><%= @app.applicant_mortgage_balance %> </td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Monthly Payment : </font></td><td bgcolor="#fef7da"><%= @app.applicant_monthly_payment %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">APR : </font></td><td bgcolor="#fef7da"><%= @app.applicant_current_apr %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Person Responsible : </font></td><td bgcolor="#fef7da"><%= @app.applicant_payment_responsible %> </td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Other Payments : </font></td><td bgcolor="#fef7da"><%= @app.applicant_monthly_payments %> </td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Other Balance : </font></td><td bgcolor="#fef7da"><%= @app.applicant_monthly_balances %>	</td></tr>
+		
+		<tr><td colspan="2" bgcolor="#993300"><font color="white" face="verdana" size="2"><strong>----- [ EMPLOYMENT INFORMATION : APPLICANT ] ---------------</strong></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Employer : </font></td><td bgcolor="#fef7da"><%= @app.applicant_employer %> </td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Income : </font></td><td bgcolor="#fef7da"><%= @app.applicant_income %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Income Type : </font></td><td bgcolor="#fef7da"><%= @app.applicant_income_type %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Income Frequency : </font></td><td bgcolor="#fef7da"><%= @app.applicant_income_frequency %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Other Income Source : </font></td><td bgcolor="#fef7da"><%= @app.applicant_other_income_source %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Other Income Amount : </font></td><td bgcolor="#fef7da"><%= @app.applicant_other_income %></td></tr>
+		<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Other Income Period : </font></td><td bgcolor="#fef7da"><%= @app.applicant_other_income_frequency %></td></tr>
+		
+		<% if !@app.coapplicant_name.blank? %>
+			<tr><td colspan="2" bgcolor="#993300"><font color="white" face="verdana" size="2"><strong>----- [ JOINT APPLICANT INFORMATION ] ---------------</strong></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Name : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_name %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Account Number : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_account_number %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">SSN : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_ssn %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Marital Status : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_marital_status %> </td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Driver's License / State : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_drivers_license %> / <%= @app.coapplicant_drivers_license_state %>	</td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">BirthDate : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_date_of_birth %>   		</td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Home Phone : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_home_phone %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Work Phone : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_business_phone %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Email Address : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_email_address %> </td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Mortgage : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_mortgage %>   		</td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Balance : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_mortgage_balance %>	</td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Monthly Payment : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_monthly_payment %> </td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">APR : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_current_apr %>	</td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Person Responsible : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_payment_responsible %> </td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Other Payments : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_monthly_payments %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Other Balance : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_monthly_balances %></td></tr>
+		
+			<tr><td colspan="2" bgcolor="#993300"><font color="white" face="verdana" size="2"><strong>----- [ EMPLOYMENT INFORMATION : JOINT APPLICANT ] ---------------" </strong></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Employer : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_employer %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Income : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_income %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Income Type : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_income_type %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Income Frequency : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_income_frequency %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Other Income Source : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_other_income_source %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Other Income Amount : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_other_income %></td></tr>
+			<tr><td bgcolor="#fae292"><font face="tahoma" size="2" color="#000000">Other Income Period : </font></td><td bgcolor="#fef7da"><%= @app.coapplicant_other_income_frequency %></td></tr>
+		<% end %>
+		
+		<tr><td colspan="2" bgcolor="#993300"><font color="white" face="verdana" size="2"><strong>----- [ END OF EMAIL TRANSMISSION ] ---------------</strong></td></tr>
+		</td>
+		</tr>
+	</table>
+</body>
+</html>

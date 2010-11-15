@@ -1,0 +1,51 @@
+<div id="rates" class="small_block">
+					<h2>CURRENT RATES</h2>
+					<div class="clearfix">
+						<p class="effective">Effective <%= Time.now.strftime("%B %d, %Y") %></p>
+						<table>
+							<caption class="clearfix">
+							<span class="fleft">Share Certificates</span><span class="fright">APY*</span>
+							</caption>
+							<tbody>
+								<tr>
+									<td>6 Month</td>
+									<td class="rate">0.60%</td>
+								</tr>
+								<tr>
+									<td>12 Month</td>
+									<td class="rate">0.75%</td>
+								</tr>
+								<tr>
+									<td>18 Month</td>
+									<td class="rate">0.80%</td>
+								</tr>
+								<tr>
+									<td>24 Month</td>
+									<td class="rate">1.00%</td>
+								</tr>
+							</tbody>
+						</table>
+						<table>
+							<caption class="clearfix"><span class="fleft">Loan Rates</span><span class="fright">as low as</span></caption>
+							<tbody>
+								<tr>
+									<td>New Auto</td>
+									<td class="rate">3.99%</td>
+								</tr>
+								<tr>
+									<td>Used Auto</td>
+									<td class="rate">3.99%</td>
+								</tr>
+								<tr>
+									<td>Personal</td>
+									<td class="rate">10.00%</td>
+								</tr>
+								<tr>
+									<td>Visa</td>
+									<td class="rate">8.90%</td>
+								</tr>
+							</tbody>
+						</table>
+						<%= link_to "&raquo; more", rates_path, :class=>"more" %>
+					</div>
+				</div>

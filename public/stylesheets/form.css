@@ -1,0 +1,155 @@
+
+dl.formfields {
+	margin: 0;
+	padding: 0;
+}
+dl.formfields dt {
+	margin: 0;
+	padding: 0;
+}
+dl.formfields dt label {
+	margin: 0;
+	padding: 0;
+}
+dl.formfields dd {
+	margin: 0;
+	padding: 0;
+}
+
+.contactform {
+	width: 650px;
+	margin: 0 auto;
+}
+
+.contactform fieldset {
+	border: 0 none;
+
+}
+
+.contactform fieldset dl dt {
+	margin-top: 2em;
+}
+
+.contactform fieldset dl dt label {
+	color: #000;
+	font-family: arial;
+}
+.contactform fieldset dl dd {
+	margin: 0;
+	padding: 0;
+}
+.contactform fieldset p.shaded {
+	background-color: #efefef;
+	padding: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+.contactform fieldset p.shaded input {
+	position: absolute;
+}
+.contactform fieldset p.shaded label {
+	padding-left: 10px;
+	display: block;
+}
+
+.contactform h2 {
+	margin: 0;
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 1.5em;
+}
+
+.contactform #captcha img {
+	display: block;
+	margin: 0 auto;
+}
+.contactform #captcha label {
+	font-weight: bold;
+	font-size: 1em;
+	display: block;
+	margin: 0 auto;
+}
+
+.contactform table td {
+	
+}
+
+#formerrors {
+	border: 1px solid #ff0000;
+	background-color: #e0e0e0;
+	padding: 1em;
+	margin: 1em;
+}
+
+#formerrors strong {
+	color: #ff0000;
+}
+
+#formerrors ul {
+	list-style-type: none;
+}
+
+#contactform {
+	margin: 0 auto;
+}
+
+.fields {
+	margin: 0;
+	padding: 0;
+}
+
+.redbold {
+	color: #880e31;
+	font-weight: bold;
+}
+
+.italic{
+	font-style: italic;
+}
+
+#forms table{
+	margin: 0 auto;
+	padding: 0;
+	width: 90%;	
+	margin-bottom: 20px;
+	
+}
+
+#forms table.border{
+	border: 1px solid #666;
+	padding: 5px;
+}
+
+#forms table tr td{
+	margin: 0;
+	padding: 3px;
+	text-align: left;
+
+}
+#forms .spacer{
+	padding-bottom: 25px;
+}
+
+#forms table tr td.right{
+	text-align: right;
+	padding: 3px;
+}
+
+p.radial{
+	text-align: left;
+
+}
+
+.signatures{
+	background-color: #FF9;
+}
+
+.loc{
+	background-color: #FCC;
+}
+
+.large{
+	font-size: 3em;
+}
+
+

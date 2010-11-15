@@ -1,0 +1,414 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+	  <div id="forms">
+		<% form_for(@memberapp) do |f| %>
+			<%= f.error_messages %>
+			<h2>Membership Application</h2>
+                
+                <p>In order to join the Credit Union, you must fill out an application. You will be required to stop by one of our 2 locations to sign a membership card and provide a government issued I.D. Please fill out the following application, then click on the submit button to start the process to apply for membership. <br /><span class="redbold">A minimum deposit of $6.00 is required to open the account.</span></p>
+                <fieldset>		
+					<table class="border">
+						<tr>
+						<td>
+					<dl class="formfields">
+						<dt><label for="name">Name:</label></dt>
+						<dd><%= f.text_field :name %></dd>
+ 					</dl>
+                        </td>
+                        <td>
+                    <dl class="formfields">
+                    <dt><label for="ssn">Soc. Sec. No:</label></dt>
+                    <dd><%= f.text_field :ssn, :size => 10, :maxlength => 11 %></dd>
+                        </dl>
+                        </td>
+                        <td>
+                        <dl class="formfields">
+                        <dt><label for="dob">Birth Date</label></dt>
+                        <dd><%= f.text_field :date_of_birth, :maxlength => 10 %></dd>
+                        </dl>
+                        </td>
+                        </tr>
+                        <tr>
+                        
+                        <td colspan="3">
+                        <dl class="formfields">
+                        	<dt><label for "checkone">Check One:</label></dt>
+                            <dd><%= f.radio_button("salutation", "Mr.") %> Mr. 
+								<%= f.radio_button("salutation", "Mrs.") %> Mrs. 
+								<%= f.radio_button("salutation", "Ms.") %> Ms. 
+								<%= f.radio_button("salutation", "Miss") %> Miss
+                            </dd>
+                        </dl>
+                        </td>
+                        </tr>
+                        
+                        	<tr>
+						<td>
+					<dl class="formfields">
+						<dt><label for="joint_name">Joint Name:</label></dt>
+						<dd><%= f.text_field :joint_name %></dd>
+ 					</dl>
+                        </td>
+                        <td>
+                    <dl class="formfields">
+                    <dt><label for="joint_ssn">Joint Soc. Sec. No:</label></dt>
+                    <dd><%= f.text_field :joint_ssn, :size => 10, :maxlength => 11 %></dd>
+                        </dl>
+                        </td>
+                        <td>
+                        <dl class="formfields">
+                        <dt><label for="joint_dob">Joint Birth Date</label></dt>
+                        <dd><%= f.text_field :joint_date_of_birth, :maxlength => 10 %></dd>
+                        </dl>
+                        </td>
+                        </tr>
+                        <tr>
+                        
+                        <td colspan="3">
+                        <dl class="formfields">
+                        	<dt><label for "checkone">Check One (Joint):</label></dt>
+                            <dd><%= f.radio_button("joint_salutation", "Mr.") %> Mr. 
+                            <%= f.radio_button("joint_salutation", "Mrs.") %> Mrs. 
+                            <%= f.radio_button("joint_salutation", "Ms.") %> Ms. 
+                            <%= f.radio_button("joint_salutation", "Miss") %> Miss
+                            </dd>
+                        </dl>
+                        </td>
+                        </tr>
+                        
+                        <tr>
+                        <td colspan="3">
+                    <dl class="formfields">
+                        <dt><label for="physical_address">Physical Address:</label></dt>
+                        <dd><%= f.text_field :physical_address, :size => 30 %></dd>
+                        </dl>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td> 
+                        <dl class="formfields">                       
+						<dt><label for="city">City:</label></dt>
+						<dd><%= f.text_field :city, :size => 25 %></dd>
+                        </dl>
+                        </td>
+                        <td>
+                        <dl class="formfields">
+                        <dt><label for="state">State:</label></dt>
+                        <dd><%= f.select( :state,
+								{ "Alabama" => "AL", 
+								  "Alaska" => "AK", 
+								  "Arizona" => "AZ", 
+								  "Arkansas" => "AR", 
+								  "California" => "CA", 
+								  "Colorado" => "CO",
+								  "Connecticut" => "CT", 
+								  "Delaware" => "DE", 
+								  "District Of Columbia" => "DC", 
+								  "Florida" => "FL", 
+								  "Georgia" => "GA", 
+								  "Hawaii" => "HI",
+								  "Idaho" => "ID", 
+								  "Illinois" => "IL", 
+								  "Indiana" => "IN", 
+								  "Iowa" => "IO", 
+								  "Kansas" => "KS", 
+								  "Kentucky" => "KY",
+								  "Louisiana" => "LA", 
+								  "Maine" => "ME", 
+								  "Maryland" => "MD", 
+								  "Massachusetts" => "MA", 
+								  "Michigan" => "MI", 
+								  "Minnesota" => "MN",
+								  "Mississippi" => "MS", 
+								  "Missouri" => "MO", 
+								  "Montana" => "MT", 
+								  "Nebraska" => "NE", 
+								  "Nevada" => "NV", 
+								  "New Hampshire" => "NH",
+								  "New Jersey" => "NJ", 
+								  "New Mexico" => "NM", 
+								  "New York" => "NY", 
+								  "North Carolina" => "NC", 
+								  "North Dakota" => "ND", 
+								  "Ohio" => "OH",
+								  "Oklahoma" => "OK", 
+								  "Oregon" => "OR", 
+								  "Pennsylvania" => "PA", 
+								  "Rhode Island" => "RI", 
+								  "South Carolina" => "SC", 
+								  "South Dakota" => "SD",
+								  "Tennessee" => "TN", 
+								  "Texas" => "TX", 
+								  "Utah" => "UT", 
+								  "Vermont" => "VT", 
+								  "Virginia" => "VA", 
+								  "Washington" => "WA",
+								  "West Virginia" => "WV",
+								  "Wisconsin" => "WI",
+								  "Wyoming" => "WY"
+								 }) %>
+                    </dd>
+                    </dl>
+                    </td>
+                    <td>
+                    <dl class="formfields">
+                        <dt><label for="zip">Zip:</label></dt>
+						<dd><%= f.text_field :zip, :size => 10, :maxlength => 5 %></dd>
+                        </dl>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td colspan="3">
+                    <dl class="formfields">
+                        <dt><label for="mailing_address">Mailing Address:</label></dt>
+                        <dd><%= f.text_field :mailing_address, :size => 30 %></dd>
+                        </dl>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td> 
+                        <dl class="formfields">                       
+						<dt><label for="city2">City:</label></dt>
+						<dd><%= f.text_field :mailing_city, :size => 25 %></dd>
+                        </dl>
+                        </td>
+                        <td>
+                        <dl class="formfields">
+                        <dt><label for="state2">State:</label></dt>
+                        <dd><%= f.select( :mailing_state,
+								{ "Alabama" => "AL", 
+								  "Alaska" => "AK", 
+								  "Arizona" => "AZ", 
+								  "Arkansas" => "AR", 
+								  "California" => "CA", 
+								  "Colorado" => "CO",
+								  "Connecticut" => "CT", 
+								  "Delaware" => "DE", 
+								  "District Of Columbia" => "DC", 
+								  "Florida" => "FL", 
+								  "Georgia" => "GA", 
+								  "Hawaii" => "HI",
+								  "Idaho" => "ID", 
+								  "Illinois" => "IL", 
+								  "Indiana" => "IN", 
+								  "Iowa" => "IO", 
+								  "Kansas" => "KS", 
+								  "Kentucky" => "KY",
+								  "Louisiana" => "LA", 
+								  "Maine" => "ME", 
+								  "Maryland" => "MD", 
+								  "Massachusetts" => "MA", 
+								  "Michigan" => "MI", 
+								  "Minnesota" => "MN",
+								  "Mississippi" => "MS", 
+								  "Missouri" => "MO", 
+								  "Montana" => "MT", 
+								  "Nebraska" => "NE", 
+								  "Nevada" => "NV", 
+								  "New Hampshire" => "NH",
+								  "New Jersey" => "NJ", 
+								  "New Mexico" => "NM", 
+								  "New York" => "NY", 
+								  "North Carolina" => "NC", 
+								  "North Dakota" => "ND", 
+								  "Ohio" => "OH",
+								  "Oklahoma" => "OK", 
+								  "Oregon" => "OR", 
+								  "Pennsylvania" => "PA", 
+								  "Rhode Island" => "RI", 
+								  "South Carolina" => "SC", 
+								  "South Dakota" => "SD",
+								  "Tennessee" => "TN", 
+								  "Texas" => "TX", 
+								  "Utah" => "UT", 
+								  "Vermont" => "VT", 
+								  "Virginia" => "VA", 
+								  "Washington" => "WA",
+								  "West Virginia" => "WV",
+								  "Wisconsin" => "WI",
+								  "Wyoming" => "WY"
+								 }) %></dd>
+                    </dl>
+                    </td>
+                    <td>
+                    <dl class="formfields">
+                        <dt><label for="zip2">Zip:</label></dt>
+						<dd><%= f.text_field :mailing_zip, :size => 10, :maxlength => 5 %></dd>
+                        </dl>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>
+                        <dl class="formfields">
+                        <dt><label for="homephone">Home Phone:</label></dt>
+                        <dd><%= f.text_field :home_phone, :size => 15, :maxlength => 12 %></dd>
+                        </dl>
+                        </td>
+                        <td colspan="2" align="left">
+                        <dl class="formfields">
+                        <dt><label for="busphone">Business Phone:</label></dt>
+                        <dd><%= f.text_field :business_phone, :size => 15, :maxlength => 12 %></dd>
+                        </dl>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td colspan="3">
+                        <dl class="formfields spacer">
+                        <dt>
+                        Membership Eligibility:<br></dt>
+                            <%= f.radio_button("membership_eligibility", "Parish") %> Parish 
+                            <%= f.radio_button("membership_eligibility", "Family") %> Family<br />Please type in your parish or relative's name below:<br />
+                            <%= f.text_area :eligibility_description, :rows=>2, :cols=> 45 %>
+                        </dl>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td colspan="3" class="redbold"><p>Due to the Privacy Act we must have a unique Privacy Code selected by you. This Code will be used when talking with the staff over the phone. Clearly print your password containing a minimum of 4 and maximum of 8 Alpha letters in the boxes below.</p></td>
+                        </tr>
+                        <tr>
+                        <td>
+                        <dl class="formfields">
+                        <dt><label for="privacy_code">Privacy Code:</label></dt>
+                        <dd><%= f.text_field :privacy_code, :size => 15 %></dd>
+                        </dl>
+                        </td>
+                        <td colspan="2">
+                        <dl class="formfields">
+                        <dt><label for="joint_privacy_code">Joint Owner Privacy Code:</label></dt>
+                        <dd><%= f.text_field :joint_privacy_code, :size => 15 %></dd>
+                        </dl>
+                        </td>
+                        </tr>
+                        <tr>
+                        	<td colspan="3">
+                            <dl class="formfields">
+                            <dt><label for="email">Email Address:</label></dt>
+                            <dd><%= f.text_field :email_address, :size => 30 %></dd>
+                            </dl>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td>
+                        	<dl class="formfields spacer">
+                            <dt><label for="bestcalltime">Best Time to Call:</label></dt>
+                            <dd><%= f.text_field :best_time_to_call, :size => 15 %></dd>
+                            </dl>
+                        </td>
+                        <td colspan="2">
+                        	<dl class="formfields">
+                            	<dt><label for="citizen">Are You a U.S. Citizen?</label></dt>
+                                <dd><%= f.radio_button("us_citizen", "Yes, I'm a citizen") %> Yes 
+                            <%= f.radio_button("us_citizen", "No, I'm NOT a citizen") %> No</dd>
+                            </dl>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td colspan="3"><p class="redbold italic">Please Check the accounts you wish to open:</p></td>
+                        </tr>
+                        <tr>
+                        	<td>
+                               <%= check_box("memberapp", "prime_savings", {}, "yes", "no")%> Prime Savings
+                            
+                            </td>
+                            <td colspan="2">
+                            <%= check_box("memberapp", "other_savings", {}, "yes", "no")%>
+                            Other Savings
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td colspan="3">
+							<dl class="formfields spacer">
+                            <dt>Select Card Type:</dt>
+                            <dd><%= check_box("memberapp", "mastermoney_debit_card", {}, "yes", "no")%> MasterMoney&#153 Debit Card
+                            </dd>
+                            </dl>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td colspan="3">
+                       <%= check_box("memberapp", "phone_vision", {}, "yes", "no")%> phONE Vision and ONlinE Vision PIN Number
+							<br>
+                            <%= check_box("memberapp", "home_banking", {}, "yes", "no")%> Home Banking	
+                        </td>
+                        </tr>
+                        <tr> 
+                        <td colspan="3"> 
+                            <%= check_box("memberapp", "share_draft", {}, "yes", "no")%>	Share Draft with the following overdraft protection:<br>
+
+									<table>
+										<tr> 
+											<td> 
+												<%= f.radio_button("overdraft_protection", "No Overdraft Privilege Requested") %> No Overdraft Privilege Requested
+											</td>
+											<td> 
+												<%= f.radio_button("overdraft_protection", "Overdraft to Share Account") %> Overdraft to Share Account
+											</td>
+										</tr>
+										<tr> 
+											<td> 
+												 
+												<%= f.radio_button("overdraft_protection", "Overdraft to Loan, then Shares") %> Overdraft to Loan, then Shares
+                                                
+											</td>
+											<td> 
+												
+												<%= f.radio_button("overdraft_protection", "Overdraft to Loan") %> Overdraft to Loan
+                                                
+											</td>
+										</tr>
+										<tr> 
+											<td> 
+												
+												<%= f.radio_button("overdraft_protection", "Overdraft to Shares, then Loan") %> Overdraft to Shares, then Loan
+                                                
+											</td>
+										</tr>
+									</table>
+                        </td>
+                      </tr>
+                     </table>      
+      <table>
+                      <tr> 
+                        <td colspan="2"> 
+                          <p class="redbold">SIGNATURES:<br>
+                          <hr align="center">
+                          <p class="italic">By submitting this application online, I hereby make application for membership in and agree to conform to the Bylaws, as amended, of ONE VISION FEDERAL CREDIT UNION (the "Credit Union"). I certify that: I am within the field of membership of this Credit Union; and the information provided on this application is true and correct. I also agree to be bound to the terms and conditions of any account that I have in the Credit Union now or in the future as set forth in the Membership Agreement.  I have read the Truth-In-Lending Disclosures (click here for disclosures).  I understand that the Federal government requires me to submit a copy of a government issued I.D., such as a driver's license in order for my application to be valid and processed.</p>
+                          <p class="italic">I authorize the Credit Union to verify any information provided hereon, to check my financial history, to obtain consumer reports on me, and to answer questions about my experiences with the Credit Union. I understand that it is a federal crime to willfully and deliberately provide incomplete or incorrect information to a Federal chartered credit union insured by National Credit Union Administration. I understand once my membership is approved, I must complete, sign, and follow instructions to finalize my membership or my membership will not be opened and I will not be extended any services.</p>
+                        </td>
+                      </tr>
+                      <tr> 
+                        <td> 
+                          <p><br />
+                            ________________________________________<br />
+                            <span class="italic">Member</span></p>
+                        </td>
+                        <td> 
+                          <p><br />
+                            _____/______/_________<br />
+                            <span class="italic">Date</span></p>
+                        </td>
+                      </tr>
+                      <tr> 
+                        <td> 
+                          <p><br />
+                            ________________________________________<br />
+                            <span class="italic">Joint Owner</span></p>
+                        </td>
+                        <td> 
+                          <p><br />
+                            _____/______/_________<br />
+                            <span class="italic">Date</span></p>
+                        </td>
+                      </tr>
+                    </table>
+					<p align="center">
+						<%= f.submit 'Submit Application' %> <input type="reset" value="Clear Form" />
+					</p>
+      </fieldset>
+		<% end %>
+	  </div>
+	</div>
+	<div id="inner_right">
+		<%= render :partial => "layouts/quickrates" %>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+    <h2>Current Rates</h2>
+    <p>One Vision FCU offers the following competitive rates to our members (click for current rates): </p>
+   	<ul>
+    	<li><%= link_to "Share Rates", share_rates_path %></li>
+        <li><%= link_to "Share and IRA Certificates", ira_certificates_path %></li>
+        <li><%= link_to "Vision Starter Share Certificates", vision_certificates_path %></li>
+        <li><%= link_to "Loan Rates", auto_loans_path %>
+        	<ul>
+            	<li><%= link_to "Automobile Loans", auto_loans_path %></li>
+                <li><%= link_to "Motorcycles, Boats, RVs, Campers, ATV's, Jet Ski", vehicle_loans_path %></li>
+                <li><%= link_to "Real Estate Loans", home_loans_path %></li>
+                <li><%= link_to "Other Loans", other_loans_path %></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>For important information about One Vision FCU dividend rates, see our <%= link_to "Truth in Savings Disclosure", truthinsavings_path %> &amp; <%= link_to "Fee Schedule", cufees_path %>.</p>
+
+<!-- LOAN RATES -->
+  
+<table class="ratestable" cellpadding="0" cellspacing="0">
+<tr>
+    	  <th colspan="4">Automobile Loans</th>
+          </tr>
+        <tr>
+        	<td class="description">Description</td>
+            <td>Term</td>
+            <td>Annual Percentage Rate</td>
+            <td>Sample Payment</td>
+        </tr>
+        <tr>
+        	<td>New Auto and Light Trucks <br />2010 - 2011 Models:</td>
+            <td colspan="3">Sample payment based on $10,000 loan amount for maximum term.</td>
+
+        </tr>
+        <tr>
+        	<td>100% Loan to Value Ratio</td>
+            <td>Up to 60 Months</td>
+            <td>3.99%</td>
+            <td>$198.26/mo</td>
+        </tr>
+        <tr>
+        	<td>Over $20,000 Borrowed</td>
+            <td>Up to 72 Months</td>
+            <td>4.99%</td>
+            <td>$351.18/mo</td>
+        </tr>           
+        <tr>
+        	<td>Used Auto and Light Trucks <br />2007 - 2009 Models:</td>
+            <td colspan="3">Sample payment based on $10,000 loan amount for maximum term.</td>
+
+        </tr>
+        <tr>
+        	<td>100% Loan to Value Ratio</td>
+            <td>Up to 60 Months</td>
+            <td>3.99%</td>
+            <td>$198.26/mo</td>
+        </tr>
+        <tr>
+        	<td>Used Auto and Light Trucks <br />2002  - 2006:</td>
+            <td colspan="3">Sample payment based on $10,000 loan amount for maximum term.</td>
+
+        </tr>
+        <tr>
+        	<td>100% Loan to Value Ratio</td>
+            <td>Up to 48 Months</td>
+            <td>3.99%</td>
+            <td>$239.70/mo</td>
+        </tr>  
+<tr>
+        	<td colspan="4" class="highlight">
+            <p class="left">The above Annual Percentage Rates represent the lowest rate offered for each specific described loan type. Your rate may be different and is based on your personal credit data. 3% APR Minimum. Above payments include single coverage of Life and Disability Insurance.</p>
+<p class="left">LTV ­ Loan to Value ­ maximum percent of the value of the home One Vision FCU will lend you.  </p>
+<p class="left">The above rate includes a discount of up to .50% based on a drawing conducted at time of loan. Rate discounts range anywhere from .10% up to .50%.</p>
+<p class="left">Rates and terms are subject to change without notice.</p>
+<p class="left">Rates Shown are effective 11/01/2010.</p>
+<p class="left">Rates and terms are quoted for comparison purposes only, other restrictions may apply, 
+call a Loan Officer for a quote for your personal needs at 1-812-945-4600. 
+</p>
+		  </td>
+        </tr>               
+                 
+    </table>  
+	
+	</div>
+    
+    <div id="inner_right">
+		<%= render :partial =>"layouts/quickrates" %>
+    </div>
+</div>

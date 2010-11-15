@@ -1,0 +1,13 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+    <h2>Applications</h2>
+    <ul class="links">
+    	<li><%= link_to "Membership Application", new_memberapp_path %></li>
+        <li><%= link_to "Loan Application", new_loanapp_path %></li>
+        <li><%= link_to "VISA&reg; Credit Card Application", new_visarequest_path %></li>
+    </ul>
+  </div>
+    <div id="inner_right">
+		<%= render :partial => "layouts/quickrates" %>
+    </div>
+</div>

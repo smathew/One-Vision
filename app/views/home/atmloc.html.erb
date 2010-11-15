@@ -1,0 +1,21 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+    <h2>Other Locations</h2>
+
+   <p class="heading">ATM Locations</p>
+   <p>As a part of the Alliance One Network, we provide you with thousands of ATMs nationwide that are available for use surcharge free. Locally, you can also use all One Vision FCU ATMs, Fifth Third Bank ATMs, and Your Community Bank ATMs. Click the link below to find all Alliance One ATMs nationwide.</p>
+   <p class="last"><%= image_tag "allianceone.jpg", :width=>120, :height=>69, :class=>"photo", :alt=>"" %><%= link_to "www.atmallianceone.org", "http://www.atmallianceone.org", :rel=>"confirm external" %></p>
+
+   <p class="heading">Shared Branch Locations</p>
+   <p>As a part of the Shared Branch Network, our members can use other credit unions to conduct their business on their One Vision FCU accounts just as they would at a One Vision FCU branch. All you need is your driver’s license and account number and you can make deposits, withdrawals, and payments nationwide at any Credit Union Center. Just look for the swirl.</p>
+   <p>Click on the link below to find all Shared Branch locations nationwide.</p>
+   <p><%= image_tag "cusc.jpg", :width=>109, :height=>109, :class=>"photo", :alt=>"" %><%= link_to "www.cuservicecenter.com", "http://www.cuservicecenter.com", :rel=>"confirm external" %></p>
+    
+  </div>
+    
+    <div id="inner_right">
+		<%= render :partial => 'layouts/quickrates' %>
+    </div>
+
+
+</div>

@@ -1,0 +1,52 @@
+
+
+Processing HomeController#onlineservices (for 127.0.0.1 at 2010-11-15 09:38:34) [GET]
+Rendering template within layouts/application
+Rendering home/onlineservices
+Rendered layouts/_quickrates (0.0ms)
+Rendered layouts/_header (31.2ms)
+Rendered layouts/_footer (0.0ms)
+Completed in 47ms (View: 47, DB: 0) | 200 OK [http://localhost/onlineservices]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-15 09:38:34) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/menu.js" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing VisarequestsController#new (for 127.0.0.1 at 2010-11-15 09:38:36) [GET]
+Rendering template within layouts/application
+Rendering visarequests/new
+Rendered layouts/_quickrates (0.0ms)
+Rendered layouts/_header (31.2ms)
+Rendered layouts/_footer (0.0ms)
+Completed in 109ms (View: 94, DB: 0) | 200 OK [http://localhost/visarequests/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-15 09:38:36) [GET]
+
+ActionController::RoutingError (No route matches "/javascripts/menu.js" with {:method=>:get}):
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby187/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby187/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)

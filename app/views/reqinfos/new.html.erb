@@ -1,0 +1,130 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+		<% form_for(@reqinfo) do |f| %>
+		<h2>Request More Information</h2>
+		<%= f.error_messages %>
+			<fieldset>		
+					<table>
+						<tr>
+						<td>
+					<dl class="formfields">
+						<dt><label for="firstname">First Name:</label></dt>
+						<dd><%= f.text_field :first_name, :size => 35 %></dd>
+                        <dt><label for="lastname">Last Name:</label></dt>
+						<dd><%= f.text_field :last_name, :size => 35 %></dd>
+						<dt><label for="email">Email:</label></dt>
+						<dd><%= f.text_field :email_address, :size => 35 %></dd>
+                        <dt><label for="phone">Phone:</label></dt>
+						<dd><%= f.text_field :phone_number, :size => 35, :maxlength => 12 %></dd>
+					</dl>
+                        </td>
+                        <td>
+                    <dl class="formfields">
+                        <dt><label for="home">Address:</label></dt>
+                        <dd><%= f.text_field :address, :size => 35 %></dd>
+						<dt><label for="city">City:</label></dt>
+						<dd><%= f.text_field :city, :size => 35 %></dd>
+                        <dt><label for="state">State:</label></dt>
+                      <dd><%= f.select( :state,
+								{ "Alabama" => "AL", 
+								  "Alaska" => "AK", 
+								  "Arizona" => "AZ", 
+								  "Arkansas" => "AR", 
+								  "California" => "CA", 
+								  "Colorado" => "CO",
+								  "Connecticut" => "CT", 
+								  "Delaware" => "DE", 
+								  "District Of Columbia" => "DC", 
+								  "Florida" => "FL", 
+								  "Georgia" => "GA", 
+								  "Hawaii" => "HI",
+								  "Idaho" => "ID", 
+								  "Illinois" => "IL", 
+								  "Indiana" => "IN", 
+								  "Iowa" => "IO", 
+								  "Kansas" => "KS", 
+								  "Kentucky" => "KY",
+								  "Louisiana" => "LA", 
+								  "Maine" => "ME", 
+								  "Maryland" => "MD", 
+								  "Massachusetts" => "MA", 
+								  "Michigan" => "MI", 
+								  "Minnesota" => "MN",
+								  "Mississippi" => "MS", 
+								  "Missouri" => "MO", 
+								  "Montana" => "MT", 
+								  "Nebraska" => "NE", 
+								  "Nevada" => "NV", 
+								  "New Hampshire" => "NH",
+								  "New Jersey" => "NJ", 
+								  "New Mexico" => "NM", 
+								  "New York" => "NY", 
+								  "North Carolina" => "NC", 
+								  "North Dakota" => "ND", 
+								  "Ohio" => "OH",
+								  "Oklahoma" => "OK", 
+								  "Oregon" => "OR", 
+								  "Pennsylvania" => "PA", 
+								  "Rhode Island" => "RI", 
+								  "South Carolina" => "SC", 
+								  "South Dakota" => "SD",
+								  "Tennessee" => "TN", 
+								  "Texas" => "TX", 
+								  "Utah" => "UT", 
+								  "Vermont" => "VT", 
+								  "Virginia" => "VA", 
+								  "Washington" => "WA",
+								  "West Virginia" => "WV",
+								  "Wisconsin" => "WI",
+								  "Wyoming" => "WY"
+								 }) %></dd>
+                        <dt><label for="zip">Zip:</label></dt>
+						<dd><%= f.text_field :zip, :size => 35, :maxlength =>5	%></dd>
+                     </dl>
+                     </td>
+                     </tr>
+                     </table>
+                     <p class="bold">Please send me more information on: <span class="disclaimer">(choose all that interest you)</span></p>
+                     <table>
+                     <tr>
+                     <td>
+                     <p><%= check_box("reqinfo", "membership_application", {}, "yes", "no")%> Membership Application </p>
+                     <p><%= check_box("reqinfo", "family_membership", {}, "yes", "no")%>  Family Membership </p>
+                     <p><%= check_box("reqinfo", "savings_account", {}, "yes", "no")%> Savings Account </p>
+                     <p><%= check_box("reqinfo", "share_draft_account", {}, "yes", "no")%> Share Draft (Checking) Account </p>
+                     <p><%= check_box("reqinfo", "christmas_club_account", {}, "yes", "no")%> Christmas Club Account </p>
+                     <p><%= check_box("reqinfo", "money_market_account", {}, "yes", "no")%> Money Market Account </p>
+                     <p><%= check_box("reqinfo", "ira_savings", {}, "yes", "no")%> Individual Retirement Account (IRA) Savings </p>
+                     <p><%= check_box("reqinfo", "ira_share_certificates", {}, "yes", "no")%> IRA Share Certificates </p>
+                     <p><%= check_box("reqinfo", "share_certificates", {}, "yes", "no")%> Share Certificates </p>
+                     <p><%= check_box("reqinfo", "phone_vision", {}, "yes", "no")%> phONE Vision (Audio Response System) information and PIN number for activation </p>
+                     <p><%= check_box("reqinfo", "overdraft_loan_information", {}, "yes", "no")%> Overdraft Loan Information and Application </p>
+                     </td>
+                     <td>
+                     <p><%= check_box("reqinfo", "personal_loan_information", {}, "yes", "no")%> Personal Loan Information and Application </p>
+                     <p><%= check_box("reqinfo", "automobile_loan_information", {}, "yes", "no")%> Automobile Loan Information and Application </p>
+                     <p><%= check_box("reqinfo", "heloc", {}, "yes", "no")%> Home Equity Line of Credit Loan Information and Application  </p>
+                     <p><%= check_box("reqinfo", "mortgage_loan_information", {}, "yes", "no")%> Mortgage Loan Information and Application </p>
+                     <p><%= check_box("reqinfo", "visa_classic_card", {}, "yes", "no")%> VISA&reg; Classic Card </p>
+                     <p><%= check_box("reqinfo", "star_atm_card", {}, "yes", "no")%> STAR&trade; ATM Card </p>
+                     <p><%= check_box("reqinfo", "mastermoney_debit_card", {}, "yes", "no")%> MasterMoney Debit Card </p>
+                     <p><%= check_box("reqinfo", "direct_deposit", {}, "yes", "no")%> Direct Deposit/NetPay Services</p>
+                     <p><%= check_box("reqinfo", "money_orders", {}, "yes", "no")%> Money Orders </p>
+                     <p><%= check_box("reqinfo", "free_notary_service", {}, "yes", "no")%> Free Notary Service </p>
+                     <p><%= check_box("reqinfo", "discount_tickets", {}, "yes", "no")%> Discount Entertainment Tickets </p>
+                     </td>
+                     </tr>
+                     </table>                     
+                     <p>Other Comments:</p>
+						<%= f.text_area :other_comments, :cols=> 60 %>
+					<hr />
+					<p class="center">
+						<%= f.submit 'Submit', :class => "center" %>
+					</p>
+				</fieldset>		
+		<% end %>
+	</div>
+    <div id="inner_right">
+		<%= render :partial => "layouts/quickrates" %>
+    </div>
+</div>

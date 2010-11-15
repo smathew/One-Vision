@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Online Membership Application</title>
+	<style type="text/css">
+		.request { width: 650px; margin: 0; padding: 0; font-family:Arial, Helvetica, sans-serif; font-size: .8em; border: 2px solid #990033; border-collapse: collapse;}
+		.first {font-weight: bold; height: 20px; margin: 0;  width: 300px;}
+		td {padding: 10px; margin: 0; border-bottom: 2px solid #990033;}
+		th {width: 100%; background-color: #990033; color: #fff; text-transform: uppercase; font-size: 1.2em; padding: 5px; text-align: left;}
+	</style>
+</head>
+<body>
+	<table class="request" cellpadding="0" cellspacing="0">
+		<tr>
+			<td colspan="2">Submitted : <%= Time.now.strftime("%A, %B %d, %Y, %H:%M:%S") %></td>
+		</tr>
+		<tr>
+			<th colspan="2"> Request for more information </th>
+		</tr>
+		<tr>
+			<td width="300" class="first">Name:</td>
+			<td width="346"><%= @app.salutation %> <%= @app.name %></td>
+		</tr>
+		<tr>
+			<td class="first">Physical Address:</td>
+			<td><%= @app.physical_address %></td>
+		</tr>
+		<tr>
+			<td class="first">City/State/Zip:</td>
+			<td><%= @app.city %> <%= @app.state %> <%= @app.zip %></td>
+		</tr>
+		<tr>
+			<td class="first">Home Phone:</td>
+			<td><%= @app.home_phone %></td>
+		</tr>
+		<tr>
+			<td class="first">Business Phone: </td>
+			<td><%= @app.business_phone %></td>
+		</tr>
+		<tr>
+			<td class="first">SSN:</td>
+			<td><%= @app.ssn %></td>
+		</tr>
+		<tr>
+			<td class="first">Birth Date:</td>
+			<td><%= @app.date_of_birth %></td>
+		</tr>
+		<tr>
+			<td class="first">Mailing Address:</td>
+			<td><%= @app.mailing_address %></td>
+		</tr>
+		<tr>
+			<td class="first">City/State/Zip:</td>
+			<td><%= @app.mailing_city %> <%= @app.mailing_state %> <%= @app.mailing_zip %></td>
+		</tr>
+		<tr>
+			<td class="first">Best Time to Call:</td>
+			<td><%= @app.best_time_to_call %></td>
+		</tr>
+		<tr>
+			<td class="first">Privacy Code:</td>
+			<td><%= @app.privacy_code %></td>
+		</tr>
+		<% if !@app.joint_name.blank? %>
+			<tr>
+				<td class="first">Joint Name:</td>
+				<td><%= @app.joint_salutation %> <%= @app.joint_name %></td>
+			</tr>
+			<tr>
+				<td class="first">Joint SSN:</td>
+				<td><%= @app.joint_ssn %></td>
+			</tr>
+			<tr>
+				<td class="first">Joint Birth Date:</td>
+				<td><%= @app.joint_date_of_birth %></td>
+			</tr>
+			<tr>
+				<td class="first">Joint Privacy Code:</td>
+				<td><%= @app.joint_privacy_code %></td>
+			</tr>
+		<% end %>
+		<tr>
+			<td class="first">EMail:</td>
+			<td><%= @app.email_address %></td>
+		</tr>
+		<tr>
+			<td class="first">Parish Family Info:</td>
+			<td><%= @app.membership_eligibility %> - <%= @app.eligibility_description %></td>
+		</tr>	
+		<tr>
+			<td class="first">Are You A US Citizen?:</td>
+			<td><%= @app.us_citizen %></td>
+		</tr>			
+		<tr>
+			<td class="first">Account Type:</td>
+			<td>
+				<% if (@app.prime_savings == "yes") %>
+					I would like to open a Prime Savings Account 
+				<% end %>
+			<br />
+				<% if (@app.other_savings == "yes") %>
+					I would like to Other Savings Account
+				<% end %>
+			</td>
+		</tr>	
+		<tr>
+			<td class="first">Card Type:</td>
+			<td><% if (@app.mastermoney_debit_card == "yes") %>
+					I would like to have a MasterMoney Debit Card
+				<% else %>
+					<%= @app.mastermoney_debit_card %>
+				<% end %>
+			</td>
+		</tr>			
+		<tr>
+			<td class="first">Options:</td>
+			<td>
+				<% if (@app.phone_vision == "yes") %>
+					I would like to have an Audio Response and PIN Number
+				<% end %>
+				<br />
+				<% if (@app.home_banking == "yes") %>
+					I would like to open a Home Banking Account
+				<% end %>
+			</td>
+		</tr>		
+		<tr>
+			<td class="first">Overdraft Protection:</td>
+			<td>I would like to have overdraft protection 
+				<br /> 
+				<%= @app.overdraft_protection %>
+			</td>
+		</tr>
+    </table>
+</body>
+</html>

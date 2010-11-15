@@ -1,0 +1,150 @@
+<div id="roof">
+	<div class="text">
+	<ul class="tabs">
+        <li><%= link_to "Home", root_path %></li>
+    	<li><%= link_to "Contact Us", contact_path %></li>
+        <li><%= link_to "ATM Locations", atmloc_path %></li>
+        <li><%= link_to "Calculators", calc_path %></li>
+        <li><%= link_to "Applications", apps_path %></li>
+        <li><%= link_to "Site Map", sitemap_path %></li>
+
+    </ul>
+    </div>
+</div>
+
+<div id="logo">
+	<div class="logo1"><%= link_to image_tag("logo.jpg", :alt => "Logo"), root_path %></div>
+</div>
+
+<div id="nav" class="clearfix">
+	<div id="menu1">
+		<ul class="dropdown background">
+		<li>
+			<%= link_to "ABOUT US", history_path %>
+            <ul>
+				<li><%= link_to "History", history_path %></li>
+                <li><%= link_to "Eligibility", eligibility_path %></li>
+                <li><%= link_to "Credit Union vs. Bank", cuvsbank_path %></li>
+                <li><%= link_to "Locations", locations_path %>
+                	<ul>
+						<li><%= link_to "Clarksville", locations_path(:anchor =>"clarksville") %></li>
+						<li><%= link_to "New Albany", locations_path(:anchor => "albany") %></li>
+                        <li><%= link_to "ATM Locations", atmloc_path %></li>
+                        <li><%= link_to "Shared Branch Locations", atmloc_path %></li>
+					</ul>
+                </li>
+				
+			</ul>
+		</li>
+		<li>
+			<%= link_to "PRODUCTS &amp; SERVICES", savings_path %>
+			<ul>
+				<li><%= link_to "Savings Products", savings_path %>
+                	<ul>
+                		<li><%= link_to "Prime Shares", savings_path(:anchor =>"primeshares") %></li>
+	                    <li><%= link_to "Special Shares", savings_path(:anchor => "specialshares") %></li>
+	                    <li><%= link_to "Money Market", savings_path(:anchor => "moneymarket") %></li>
+	                    <li><%= link_to "Christmas Club", savings_path(:anchor => "christmasclub") %></li>
+	                    <li><%= link_to "IRA Share Savings/Certificates", savings_path(:anchor => "ira") %></li>
+	                    <li><%= link_to "Share Certificates", savings_path(:anchor => "shares") %></li>
+	                    <li><%= link_to "Vision Starter Share Certificates", savings_path(:anchor=>"visionstarter") %></li>
+	                </ul>
+                </li>
+                <li><%= link_to "Share Draft(Checking) Products", sharedraft_path %>
+                	<ul>
+                    	<li><%= link_to "FREE Share Draft(Checking) Account", sharedraft_path(:anchor => "free") %></li>
+                    </ul>
+                </li>
+                <li><%= link_to "Loan Products", loanprod_path %>
+                	<ul>
+                    	<li><%= link_to "Automobile, Truck, Van, and SUV Loans", loanprod_path(:anchor => "auto") %></li>
+                        <li><%= link_to "Boat, Motorcycle, RV Loans", loanprod_path(:anchor => "boat") %></li>
+                        <li><%= link_to "Signature Loans &amp; Revolving Credit Loans", loanprod_path(:anchor => "signature") %></li>
+                        <li><%= link_to "VISA Credit Cards", loanprod_path(:anchor => "visa") %></li>
+                        <li><%= link_to "First Mortgages", loanprod_path(:anchor =>"mortgages") %></li>
+                        <li><%= link_to "Home Equity Loans", loanprod_path(:anchor => "heloc") %></li>
+                        <li><%= link_to "GAP Insurance", loanprod_path(:anchor => "gap") %></li>
+                        <li><%= link_to "Loan Protection Insurance", loanprod_path(:anchor => "lpi") %></li>
+                        <li><%= link_to "Route 66", loanprod_path(:anchor => "route66") %></li>
+                    </ul>
+                </li>
+                <li><%= link_to "Mortgage Center", "http://www.mycumortgagehomeloans.com/default.asp?siteId=67AA1C19-D850-4986-898D-777DD315B995", :rel=>"confirm external" %></li>
+                <li><%= link_to "Other Services", otherservices_path %>
+                	<ul>
+                    	<li><%= link_to "phONE Vision", otherservices_path(:anchor => "phone") %></li>
+                        <li><%= link_to "ONlinE Vision", otherservices_path(:anchor =>"online") %></li>
+                        <li><%= link_to "ePay With Vision", otherservices_path(:anchor => "epay") %></li>
+                        <li><%= link_to "ePay With Vision Plus", otherservices_path(:anchor => "epayplus") %></li>
+                        <li><%= link_to "MasterMoney Debit Card", otherservices_path(:anchor => "mastermoney") %></li>
+                        <li><%= link_to "Alliance One Network", otherservices_path(:anchor => "allianceone") %></li>
+                        <li><%= link_to "Shared Branching Network", otherservices_path(:anchor => "shared") %></li>
+                        <li><%= link_to "Money Orders", otherservices_path(:anchor => "moneyorders") %></li>
+                        <li><%= link_to "Cashiers Checks", otherservices_path(:anchor => "cashierschecks") %></li>
+                        <li><%= link_to "Wire Transfers", otherservices_path(:anchor => "wiretransfers") %></li>
+                        <li><%= link_to "Direct Deposit", otherservices_path(:anchor => "directdeposit") %></li>
+                        <li><%= link_to "Night Drop", otherservices_path(:anchor => "nightdrop") %></li>
+                        <li><%= link_to "Notary Services", otherservices_path(:anchor => "notary") %></li>
+                        <li><%= link_to "Discounted Tickets to Amusement Parks", otherservices_path(:anchor => "amusement") %></li>
+                        <li><%= link_to "Coin Machine", otherservices_path(:anchor => "coin") %></li>
+                        <li><%= link_to "VISA Gift Cards", otherservices_path(:anchor => "visa") %></li>
+                        <li><%= link_to "Route 66", otherservices_path(:anchor => "route66") %></li>
+                    </ul>
+                </li>
+               
+				
+			</ul>
+		</li>
+		<li>
+			<%= link_to "ONLINE SERVICES", onlineservices_path %>
+			<ul>
+				<li><%= link_to "ONlinE Vision", onlineservices_path(:anchor => "online") %></li>
+				<li><%= link_to "ePay With Vision", onlineservices_path(:anchor => "epay") %></li>
+				<li><%= link_to "Online Applications", onlineservices_path(:anchor => "apps") %></li>
+			</ul>
+		</li>
+        
+		<li>
+			<%= link_to "CURRENT RATES", rates_path %>
+			<ul>
+				<li><%= link_to "Savings Rates", share_rates_path %></li>
+				<li><%= link_to "Certificate Rates", ira_certificates_path %></li>
+				<li><%= link_to "Vision Starter Certificate Rates", vision_certificates_path %></li>
+				<li><%= link_to "Loan Rates", auto_loans_path %></li>
+			</ul>
+		</li>  
+        
+		<li>
+			<%= link_to "LIFE EVENTS", lifeevents_path %>
+			<ul>
+				<li><%= link_to "Buying a Car", lifeevents_car_path %></li>
+				<li><%= link_to "College Life", lifeevents_college_path %></li>
+				<li><%= link_to "Getting Married", lifeevents_marriage_path %></li>
+				<li><%= link_to "Buying a House", lifeevents_house_path %></li>
+				<li><%= link_to "Having a Baby", lifeevents_baby_path %></li>
+				<li><%= link_to "Unexpected Events", lifeevents_unexpected_path %></li>
+				<li><%= link_to "Retirement", lifeevents_retirement_path %></li>
+			</ul>
+		</li>              
+		<li>
+			<%= link_to "WHAT'S NEW", "#" %>
+			<ul>
+				<li><%= link_to "Credit Union News", cunews_path %></li>
+                <li><%= link_to "Community Room", commroom_path %></li>
+                <li><%= link_to "Vehicles for Sale", carsale_path %></li>
+			</ul>
+		</li>  
+        
+		<li>
+			<%= link_to "HELPFUL LINKS", links_path %>
+			<ul>
+				<li><%= link_to "Alliance One", "http://www.atmallianceone.org/", :rel=>"confirm external" %></li>
+				<li><%= link_to "Shared Branch Network", "http://www.creditunion.net/", :rel=>"confirm external" %></li>
+				<li><%= link_to "Harland Clarke Check Order", "https://www.clarkeamerican.com/caccp/login/where_to_find_this.jsp?exp=P", :rel=>"confirm external" %></li>
+				<li><%= link_to "Mastercard Secure Code", "https://securevbv.concordefs.com/concord/registration/welcome.jsp?partner=641781", :rel=>"confirm external" %></li>
+				<li><%= link_to "Kirby Kangaroo", "http://www.kirbykangaroo.com/index.php?cuid=27701182", :rel=>"confirm external" %></li>
+				<li><%= link_to "CU Succeed", "http://www.cusucceed.net/index.php?cuid=27701182", :rel=>"confirm external" %></li>
+			</ul>
+		</li>              
+	</ul>
+    </div>
+</div>

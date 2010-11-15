@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Online VISA&reg; Request</title>
+	<style type="text/css">
+		.request { width: 650px; margin: 0; padding: 0; font-family:Arial, Helvetica, sans-serif; font-size: .8em; border: 2px solid #990033; border-collapse: collapse;}
+		.first {font-weight: bold; height: 20px; margin: 0;  width: 300px;}
+		td {padding: 10px; margin: 0; border-bottom: 2px solid #990033;}
+		th {width: 100%; background-color: #990033; color: #fff; text-transform: uppercase; font-size: 1.2em; padding: 5px; text-align: left;}
+	</style>
+</head>
+<body>
+	<table class="request" cellpadding="0" cellspacing="0">
+		<tr>
+            <td colspan="2">Submitted <%= Time.now.strftime("%A, %B %d, %Y, %H:%M:%S") %></td>
+        </tr>
+        <tr>
+            <th colspan="2">Online VISA&reg; Request</th>
+        </tr>
+        <tr>
+			<th colspan="2">Applicant Information</th>
+        </tr>
+        <tr>
+            <td class="first">Apply for Visa:</td>
+            <td><%= @app.visa_card_account %></td>
+        </tr>
+        <tr>
+			<td class="first">Individual/Joint Account:</td>
+            <td><%= @app.account_type %></td>
+        </tr>
+		<% if (@app.credit_increase_on_account == "yes") %>
+			<tr>
+				<td class="first">Limit Increase Request:</td>
+				<td>Apply for a credit increase on my VISA CARD ACCOUNT</td>
+			</tr>
+			<tr>
+				<td class="first">Card Number:</td>
+				<td><%= @app.account_number %></td>
+			</tr>
+			<tr>
+			<td class="first">Requested Amount:</td>
+			<td><%= @app.credit_limit_increase %> 
+				<% if (@app.credit_limit_increase == "Increase my credit limit by the amount specified") %>
+				<br />Other: <%= @app.other_credit_limit %>
+				<% end %>
+			</td>
+		</tr>
+		<% end %>	
+			
+		<tr>
+			<td width="300" class="first">Name:</td>
+            <td width="346"><%= @app.applicant_name %></td>
+        </tr>
+		<tr>
+			<td class="first">Email:</td>
+            <td><%= @app.applicant_email_address %></td>
+        </tr>				
+		<tr>
+			<td class="first">Address:</td>
+            <td><%= @app.applicant_address %></td>
+		</tr> 
+		<tr>
+            <td class="first">City/State/Zip:</td>
+            <td><%= @app.applicant_city %> <%= @app.applicant_state %> <%= @app.applicant_zip %></td>
+        </tr>		
+		<tr>
+            <td class="first">Home Phone:</td>
+            <td><%= @app.applicant_home_phone %></td>
+        </tr>
+		<% if !@app.applicant_work_phone.blank? %>
+			<tr>
+				<td class="first">Work Phone:</td>
+				<td><%= @app.applicant_work_phone %></td>
+			</tr>		
+		<% end %>
+		<tr>
+            <td class="first">SSN:</td>
+            <td><%= @app.applicant_ssn %></td>
+        </tr>
+        <tr>
+            <td class="first">Member Number:</td>
+            <td><%= @app.applicant_member_number %></td>
+        </tr>
+        <tr>
+            <td class="first">Birthdate:</td>
+            <td><%= @app.applicant_date_of_birth %></td>
+        </tr>
+        <tr>
+            <td class="first">Employer:</td>
+            <td><%= @app.applicant_employer %></td>
+        </tr>
+        <tr>
+            <td class="first">Income:</td>
+            <td><%= @app.applicant_income %> <%= @app.applicant_income_type %> <%= @app.applicant_income_frequency %></td>
+        </tr>	
+		<% if !@app.applicant_other_income_source.blank? %>
+			<tr>
+				<td class="first">Other Income Source:</td>
+				<td><%= @app.applicant_other_income_source %></td>
+			</tr>
+			<tr>
+				<td class="first">Other Income:</td>
+				<td><%= @app.applicant_other_income %><br /><%= @app.applicant_other_income_frequency %></td>
+            </tr>
+		<% end %>
+		<% if !@app.coapplicant_name.blank? %>
+			<tr>
+				<th colspan="2">Joint Applicant Information</th>
+			</tr>
+			<tr>
+				<td width="300" class="first">Joint Name:</td>
+				<td width="346"><%= @app.coapplicant_name %></td>
+			</tr>
+			<tr>
+				<td class="first">Email:</td>
+				<td><%= @app.coapplicant_email_address %></td>
+			</tr>			
+			<tr>
+				<td class="first">Address:</td>
+				<td><%= @app.coapplicant_address %></td>
+			</tr>
+			<tr>
+				<td class="first">City/State/Zip:</td>
+				<td><%= @app.coapplicant_city %> <%= @app.coapplicant_state %> <%= @app.coapplicant_zip %></td>
+			</tr>
+			<tr>
+				<td class="first">Home Phone:</td>
+				<td><%= @app.coapplicant_home_phone %></td>
+			</tr>
+			<% if !@app.coapplicant_work_phone.blank? %>
+				<tr>
+					<td class="first">Work Phone: </td>
+					<td><%= @app.coapplicant_work_phone %></td>
+				</tr>
+			<% end %>
+			<tr>
+				<td class="first">SSN:</td>
+				<td><%= @app.coapplicant_ssn %></td>
+			</tr>
+			<tr>
+				<td class="first">Member Number:</td>
+				<td><%= @app.coapplicant_member_number %></td>
+			</tr>
+			<tr>
+				<td class="first">Birthdate:</td>
+				<td><%= @app.coapplicant_date_of_birth %></td>
+			</tr>
+			<% if !@app.coapplicant_employer.blank? %>
+				<tr>
+					<td class="first">Employer:</td>
+					<td><%= @app.coapplicant_employer %></td>
+				</tr>
+			<% end %>
+			<% if !@app.coapplicant_income.blank? %>
+				<tr>
+					<td class="first">Income:</td>
+					<td><%= @app.coapplicant_income %> <%= @app.coapplicant_income_type %> <%= @app.coapplicant_income_frequency %></td>
+				</tr>
+			<% end %>
+			<% if !@app.coapplicant_other_income_source.blank? %>
+				<tr>
+					<td class="first">Other Income Source:</td>
+					<td><%= @app.coapplicant_other_income_source %></td>
+				</tr>
+				<tr>
+					<td class="first">Other Income:</td>
+					<td><%= @app.coapplicant_other_income %><br /> <%= @app.coapplicant_other_income_frequency %></td>
+				</tr>
+			<% end %>
+		<% end %>										           
+	</table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+    <h2>Browser Requirements</h2>
+<p>To get the best possible experience using our website, we recommend that you use the most recent version of your preferred web browser. A list of the most popular web browsers can be found below.</p>
+					<p>Just click on the icons to go to the download page.</p>
+					<ul class="browsers">
+						<li>
+							<%= link_to image_tag("browser_ie.gif", :alt=>"Internet Explorer") + "Internet Explorer 8+", "http://www.microsoft.com/windows/Internet-explorer/default.aspx", :rel=>"confirm external" %>
+						</li>
+						<li>
+							<%= link_to image_tag("browser_firefox.gif", :alt=>"Firefox") + "Firefox 3.5+", "http://www.mozilla.com/firefox", :rel=>"confirm external" %>
+						</li>
+						<li>
+							<%= link_to image_tag("browser_safari.gif", :alt=>"Safari") + "Safari 4+", "http://www.apple.com/safari/download", :rel=>"confirm external" %>
+						</li>
+						<li>
+							<%= link_to image_tag("browser_opera.gif", :alt=>"Opera") + "Opera 10+", "http://www.opera.com/download/", :rel=>"confirm external" %>
+						</li>
+						<li>
+							<%= link_to image_tag("browser_chrome.gif", :alt=>"Chrome") + "Chrome 2.0+", "http://www.google.com/chrome", :rel=>"confirm external" %>
+						</li>
+					</ul>
+					<p>In addition, both Cookies and JavaScript must be enabled in your web browser in order to successfully navigate through this site. Please consult your browser documentation for assistance in enabling Cookies and JavaScript in your web browser. </p>
+    </div>
+    
+    <div id="inner_right">
+		<%= render :partial => 'layouts/quickrates' %>
+    </div>
+</div>

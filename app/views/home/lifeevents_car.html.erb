@@ -1,0 +1,27 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+
+    <h2>Buying a Car</h2>
+   <p>&nbsp;</p>  
+   <%= image_tag "banner_car.jpg", :alt=>"", :width=>683, :height=>192 %>
+   <p>Buying a new car can be an exciting and intimidating experience. Having knowledge of the process can increase your confidence and also save you some money and headaches. There is more to consider when purchasing a car than just the sales price of the vehicle. Other costs to consider include:</p>
+   <ul>
+   		<li><span class="bold">Registration</span> - Contact your local BMV for details</li>
+        <li><span class="bold">Sales Tax</span> - Depending on the state of purchase, percentage varies</li>
+        <li><span class="bold">Insurance</span> - Contact a local insurance agent for a quote on this vehicle</li>
+        <li><span class="bold">Financing Costs</span> - Click <%= link_to "here", auto_loans_path %> to see our current auto loan rates</li>
+        <li><span class="bold">Gas</span> - Consider MPG and your current driving habits</li>
+        <li><span class="bold">Repairs and Maintenance</span> - Be sure to put money back for anything unexpected</li>
+   </ul>
+
+   <p>Additional Options and Services to consider:</p>
+   <p><span class="bold">GAP Insurance</span>: This protects you against out-of-pocket expense that arises when the insurance settlement is less than the loan payoff.  This program will also 	give you $1,000 towards the purchse of your next car if your current car is totaled and you finance the next car through One Vision FCU.</p>
+   <p><span class="bold">Credit Life</span>: Protect your loved ones from your debts with Credit Life.  This will pay off the balance of your loan upon your death up to the policy maximum.</p>
+   <p><span class="bold">Credit Disability</span>: This will cover your loan payment should you become totally and continuously disabled and are unable to work because of sickness or an accident. </p>
+   <p><span class="bold">Research</span>: Be prepared when negotiating the &quot;bottom line&quot;. Make sure you do your research on the car you are looking to buy.   Go to <%= link_to "NADA", "http://www.nadaguides.com", :rel=>"confirm external" %> online to look at cost analysis, performance evaluations, and pictures.  Be prepared to negotiate prices to save you money!</p>
+   <p class="last">As always, you can contact us here at One Vision Federal Credit Union for any assistance we can provide, from research to financing options. Call us today at (812) 945-4600 or (812) 948-7998.</p>
+    </div>
+    <div id="inner_right">
+		<%= render :partial => "layouts/quickrates" %>
+    </div>
+</div>

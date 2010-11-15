@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Request for More Information</title>
+<style type="text/css">
+	.request { width: 650px; margin: 0; padding: 0; font-family:Arial, Helvetica, sans-serif; font-size: .8em; border: 2px solid #990033; border-collapse: collapse;}
+	.first {font-weight: bold; height: 20px; margin: 0;  width: 300px;}
+	td {padding: 10px; margin: 0; border-bottom: 2px solid #990033;}
+	th {width: 100%; background-color: #990033; color: #fff; text-transform: uppercase; font-size: 1.2em; padding: 5px; text-align: left;}
+</style>
+</head>	
+	<body>
+		<table class="request" cellpadding="0" cellspacing="0">
+        <tr>
+			<td colspan="2">Submitted : <%= Time.now.strftime("%A, %B %d, %Y, %H:%M:%S") %></td>
+        </tr>
+        <tr>
+        <th colspan="2"> Request for more information </th>
+        </tr>
+        <tr>
+			<td width="300" class="first">Name:</td>
+			<td width="346"><%= @app.first_name %> <%= @app.last_name %></td>
+        </tr>
+        <tr>
+			<td class="first">Email:</td>
+			<td><%= @app.email_address %></td>
+			</tr>
+        <tr>
+			<td class="first">Phone:</td>
+			<td><%= @app.phone_number %></td>
+        </tr>
+        <tr>
+			<td class="first">Address:</td>
+			<td><%= @app.address %></td>
+        </tr>
+        <tr>
+			<td class="first">City: </td>
+			<td><%= @app.city %></td>
+        </tr>
+        <tr>
+			<td class="first">State:</td>
+			<td><%= @app.state %></td>
+        </tr>
+        <tr>
+			<td class="first">Zip:</td>
+			<td><%= @app.zip %></td>
+        </tr>
+        <tr>
+			<td colspan="2"><strong> Please send me more information on the following topics: </strong><br /></td>
+        </tr>
+		<% if (@app.membership_application == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Membership Application</td>
+			</tr>
+		<% end %>
+		<% if (@app.family_membership == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Family Membership</td>
+			</tr>
+		<% end %>
+		<% if (@app.savings_account == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Savings Account</td>
+			</tr>
+		<% end %>
+		<% if (@app.share_draft_account == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Share Draft (Checking) Account 
+</td>
+			</tr>
+		<% end %>
+		<% if (@app.christmas_club_account == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Christmas Club Account</td>
+			</tr>
+		<% end %>
+		<% if (@app.money_market_account == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Money Market Account</td>
+			</tr>
+		<% end %>
+		<% if (@app.ira_savings == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Individual Retirement Account (IRA) Savings</td>
+			</tr>
+		<% end %>
+		<% if (@app.ira_share_certificates == "yes") %>
+			<tr>
+				<td colspan="2" align="center">IRA Share Certificates</td>
+			</tr>
+		<% end %>
+		<% if (@app.share_certificates == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Share Certificates</td>
+			</tr>
+		<% end %>
+		<% if (@app.phone_vision == "yes") %>
+			<tr>
+				<td colspan="2" align="center">phONE Vision (Audio Response System) information and PIN number for activation</td>
+			</tr>
+		<% end %>
+		<% if (@app.overdraft_loan_information == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Overdraft Loan Information and Application</td>
+			</tr>
+		<% end %>
+		<% if (@app.personal_loan_information == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Personal Loan Information and Application</td>
+			</tr>
+		<% end %>
+		<% if (@app.automobile_loan_information == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Automobile Loan Information and Application</td>
+			</tr>
+		<% end %>
+		<% if (@app.heloc == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Home Equity Line of Credit Loan Information and Application</td>
+			</tr>
+		<% end %>
+		<% if (@app.mortgage_loan_information == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Mortgage Loan Information and Application</td>
+			</tr>
+		<% end %>
+		<% if (@app.visa_classic_card == "yes") %>
+			<tr>
+				<td colspan="2" align="center">VISA® Classic Card</td>
+			</tr>
+		<% end %>
+		<% if (@app.star_atm_card == "yes") %>
+			<tr>
+				<td colspan="2" align="center">STAR™ ATM Card</td>
+			</tr>
+		<% end %>
+		<% if (@app.mastermoney_debit_card == "yes") %>
+			<tr>
+				<td colspan="2" align="center">MasterMoney Debit Card</td>
+			</tr>
+		<% end %>
+		<% if (@app.direct_deposit == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Direct Deposit/NetPay Services
+</td>
+			</tr>
+		<% end %>
+		<% if (@app.money_orders == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Money Orders</td>
+			</tr>
+		<% end %>
+		<% if (@app.free_notary_service == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Free Notary Service</td>
+			</tr>
+		<% end %>
+		<% if (@app.discount_tickets == "yes") %>
+			<tr>
+				<td colspan="2" align="center">Discount Entertainment Tickets</td>
+			</tr>
+		<% end %>
+        <tr>
+        <th colspan="2">Additional Comments:</th>
+        </tr>
+        <tr>
+			<td colspan="2"><%= @app.other_comments %></td>
+        </tr>
+     </table>
+</body>
+</html>
+		

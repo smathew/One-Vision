@@ -1,0 +1,42 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+    <h2>Savings Products</h2>
+   <p class="last">At One Vision Federal Credit Union, we are committed to providing our members with the best financial products and services available. We are constantly striving to make our services better for you. Be sure to check out each and every one of our services to see how they can improve your financial life and help you better manage your financial affairs. The following are the Savings Products we offer here at One Vision Federal Credit Union.</p>
+   <ul class="last">
+   		<li><%= link_to "Current Savings Rates", rates_path %></li>
+        <li><%= link_to "Truth-In-Savings Disclosure", truthinsavings_path %></li>
+        <li><%= link_to "Request More Information", new_reqinfo_path %></li>
+        <li><%= link_to "Apply for Membership Now", new_memberapp_path %></li>
+   </ul>
+   
+<p class="heading"><a name="primeshares"></a>Prime Share Accounts (Savings)</p>
+<%= image_tag "Savings-account.jpg", :class=>"fleft photo3", :alt=>"" %>
+<p class="last">The Prime Share Account is the primary account for all of our members and is required for membership. This account has a $5.00 minimum balance and is all you need to become a member of One Vision Federal Credit Union. This account gives members the ability to save money while keeping it free in case it is needed for emergencies.</p>
+
+<p class="heading"><a name="specialshares"></a>Special Savings Accounts</p>
+<%= image_tag "special-savings.jpg", :class=>"fright photo3", :alt=>"" %>
+<p class="last">Do you have something special you want to set money aside for? Our Special Savings accounts are just what you need. Open up to three additional savings accounts and name them whatever you want.  Vacations, Cars, Home Repairs, or anything else you are saving for, we can help you. You name the reason, we open the account. Stop by and speak to one of our Member Service Representatives for assistance today!</p>
+
+<p class="heading"><a name="moneymarket"></a>Money Market Accounts</p>
+<p class="last">Do you want a higher return on your savings with a flexible account? If so, our Money Market Accounts may be just the thing for you. There is no monthly service charge as long as you maintain a minimum balance of $2,500. Market based dividends are placed on the account, calculated daily, and credited to the account monthly. Checks are available with the account if you so choose and up to three per month can be written on the account. Three other withdrawals are allowed per month as well. However, deposits are unlimited so start saving with a Money Market Account today!</p>
+
+<p class="heading"><a name="christmasclub"></a><%= image_tag "Christmas-club.jpg", :class=>"fright photo3", :alt=>"" %>Christmas Club Accounts</p>
+
+<p class="last">Save money throughout the year for Christmas shopping by opening a Christmas Club Account. You can make deposits into this account year-round to save for Christmas. Withdrawals are only allowed from October through December, just in time for that Holiday shopping. You can even set up an automatic transfer from any other account to add money to your Christmas Club Account. Ask us about our Christmas Club Accounts today and make your Holidays less stressful!</p>
+
+<p class="heading"><a name="ira"></a>IRA Share Savings/Share Certificate Accounts</p>
+<%= image_tag "IRA.jpg", :class=>"fleft photo3", :alt=>"" %>
+<p class="last">If saving for retirement is important to you, we have just the product you need. We offer Traditional, Roth, and Educational IRA Share Savings Accounts and IRA Share Certificates. It is never too late to start building your retirement savings and our IRAs make it easy. Once you build your IRA Share Savings Balance up, you can then transfer the funds to one of our IRA Share Certificates ($500.00 Minimum) to earn a higher yield on your retirement funds. Start your retirement fund today by stopping by any of our branch locations or simply give us a call.</p>
+
+<p class="heading"><a name="shares"></a>Share Certificates</p>
+<p class="last">Want to securely invest some funds and earn a higher yield than our Prime Share Savings or Money Market Accounts? Then a Share Certificate is the answer for you. A $500 minimum is all that is required to open a Share Certificate. You can choose your term anywhere from 6 months up to 60 months. Our rates are competitive in the market. If you have money you want to see grow, talk to one of our Member Service Representatives about our Share Certificates today if you want security and a higher yield!</p>
+
+<p class="heading"><a name="visionstarter"></a>Vision Starter Share Certificates</p>
+<%= image_tag "vision-starter.jpg", :class=>"fleft photo3", :alt=>"" %>
+<p class="last">Our Vision Starter Share Certificates are designed to allow our younger members to learn the importance and benefit of saving while earning a higher rate. These Certificates are available for our members 17 and under with a 12 or 24 month term and have a great rate of return. The benefit of these accounts is the ability to add to the Certificate throughout the term. Ask our Member Service Representatives about this great product today! </p>
+    
+    </div>
+    <div id="inner_right">
+		<%= render :partial => "layouts/quickrates" %>
+    </div>
+</div>

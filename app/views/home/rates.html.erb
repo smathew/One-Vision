@@ -1,0 +1,26 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+    <h2>Current Rates</h2>
+    <p>One Vision FCU offers the following competitive rates to our members (click for current rates): </p>
+   	<ul>
+    	<li><%= link_to "Share Rates", share_rates_path %></li>
+        <li><%= link_to "Share and IRA Certificates", ira_certificates_path %></li>
+        <li><%= link_to "Vision Starter Share Certificates", vision_certificates_path %></li>
+        <li><%= link_to "Loan Rates", auto_loans_path %>
+        	<ul>
+            	<li><%= link_to "Automobile Loans", auto_loans_path %></li>
+                <li><%= link_to "Motorcycles, Boats, RVs, Campers, ATV's, Jet Ski", vehicle_loans_path %></li>
+                <li><%= link_to "Real Estate Loans", home_loans_path %></li>
+                <li><%= link_to "Other Loans", other_loans_path %></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>For important information about One Vision FCU dividend rates, see our <%= link_to "Truth in Savings Disclosure", truthinsavings_path %> &amp; <%= link_to "Fee Schedule", cufees_path %>.</p>
+
+    </div>
+    
+    <div id="inner_right">
+		<%= render :partial =>"layouts/quickrates" %>
+    </div>
+</div>

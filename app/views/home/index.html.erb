@@ -1,0 +1,115 @@
+<div id="header">
+	<div id="container" class="clearfix">
+		<div class="ads">
+			<%= javascript_include_tag "jquery.cycle.all.min" %>
+			<script type="text/javascript"> 
+			$(function() {
+				$('.pics').cycle({ 
+				fx:    'fade',
+				pager:  '#slidesnav',
+				pause:  6
+				});
+			});
+			 
+			</script>
+			<div class="pics">
+				<%= link_to image_tag("ad_scholarships.jpg", :alt => ""), "pdf/scholarship_application.pdf", :rel=>"external" %>
+				<%= link_to image_tag("ad_9.jpg", :alt=>""), "http://www.myautoline.com/CU_LandingPage/OneVisionFCU/index.html", :rel=>"confirm external" %>
+				<%= link_to image_tag("ad_1.jpg", :alt => ""), cruise_path %>			 
+				<%= link_to image_tag("ad_2.jpg"), visa_path %>
+				<%= link_to image_tag("ad_3.jpg"), freesharedraft_path %>
+				<%= link_to image_tag("ad_4.jpg"), branches5000_path %>
+				<%= link_to image_tag("ad_6.jpg", :alt => ""), "http://www.mycumortgagehomeloans.com/default.asp?siteId=67AA1C19-D850-4986-898D-777DD315B995", :rel=>"confirm external" %>
+			</div>
+			<div id="slidesnav">&nbsp;</div>
+			
+        </div>
+        <div id="hblogin">
+       	  <p class="hbheadtext">ONlinE Vision Login</p>
+			<form id="hbloginF" method="post" action="https://www.onevisionfcu.org/hbv3_2/login.asp" class="clearfix">
+            	<p><input type="hidden" name="emailContact" value="onevisionfcu@onevisionfcu.org" />
+			    <input type="hidden" name="creditunion" value="7826" />
+			    <input type="hidden" name="cuname" value="ST ANTHONYS FCU" /> 
+			    <input type="hidden" name="service" value="StAnthony Home Branch" /> 
+                <input type="hidden" name="FIID" value="750" />
+				<input type="hidden" name="browser" value="" />	
+				<input type="hidden" name="browName" />
+				<input type="hidden" name="browVer" />
+				<input type="hidden" name="browAppCode" />
+				<input type="hidden" name="browUserAgent" />
+				<input type="hidden" name="screenRes" /></p>
+			<fieldset>
+				<ul>
+					<li>
+						<label for="hbloginFaccount">Account Number</label>
+						<input type="text" name="account" id="hbloginFaccount" size="15" class="formfield" />
+					</li>
+					<li>
+						<label for="hbloginFpassword">PIN</label>
+						<input type="password" name="pin" id="hbloginFpassword" size="15" class="formfield" />
+					</li>
+				</ul>
+				<input type="submit" value="LOGIN" class="submit" />
+
+			</fieldset>
+		</form>
+<p>
+        <%= image_tag "secure_lock.jpg", :alt=>"", :class=>"lock" %><script type="text/javascript"> SiteSeal("https://seal.networksolutions.com/images/basicrecgreen.gif", "NETSP", "none");</script>
+        </p>
+      </div>
+	</div>
+</div>
+
+<div id="pagewrapper" class="clearfix">
+	<div id="left">
+    <h5>Welcome to One Vision Federal Credit Union</h5>
+<div id="notice" class="clearfix"><%= image_tag "browsers.jpg", :class=>"fright photo", :alt=>"" %><h2>Are You Up To Date?</h2>
+        
+        <p>Please take a moment to ensure that you have the latest browser version by visiting our <%= link_to "Browser Requirements", browserreq_path %> page and updating
+        your software to get the full experience of our newly redesigned website!</p>
+        </div>	
+    <p>Welcome to the new, redesigned website of One Vision Federal Credit Union.  We hope that this new design makes our page more user friendly and up
+    to date.  You can now log-in to ONlinE Vision directly from the home page.  Also be sure to keep up to date on our new promotions and latest credit union
+    news.  With this new website, we hope to be able to provide our members with more up to date information.  We hope you enjoy the new and improved website
+    of One Vision Federal Credit Union.</p>
+    <p>Membership in One Vision Federal Credit Union is open to anyone who lives, works, worships, or attends school in Clark, Floyd, or Harrison Counties in
+    Southern Indiana.  We are Southern Indiana's Community Credit Union having served Southern Indiana since 1954.  Come see us today to experience &quot;The
+    Credit Union Difference&quot;.</p>
+    
+    <div class="specials">
+    <h4>Product Focus</h4>
+    	<ul>
+        	<li><%= link_to "Cruise Into Savings", cruise_path %></li>
+            <li><%= link_to "Free Share Draft (Checking) Account", freesharedraft_path %></li>
+            <li><%= link_to "One Vision FCU Visa Card", visa_path %></li>
+        </ul>
+    </div>
+    
+    <div class="whatsnew">
+    <h4>What's New</h4>
+    	<ul>
+			<li><%= link_to "2010&ndash;2011 Scholarship Application",  "pdf/scholarship_application.pdf", :rel=>"external" %></li>
+            <li><%= link_to "Now Over 5000 Branches Nationwide!", branches5000_path %></li>
+            <li><%= link_to "Mortgage Center", "http://www.mycumortgagehomeloans.com/default.asp?siteId=67AA1C19-D850-4986-898D-777DD315B995", :rel=>"confirm external" %></li>
+        </ul>
+    </div>
+    <%= link_to image_tag("visaverified.gif", :class=>"bannerimg", :alt=>""),"https://secure2.arcot.com/vpas/svc46327/i18n/en_US/index.html", :rel=>"confirm external" %>
+    </div>
+    
+    
+    
+    <div id="right">
+    <div id="pharmcard">
+      <%= link_to image_tag("prescription_card.jpg", :alt=>"", :width=>189, :height=>267), pharmcard_path %>
+   </div>
+   <%= render :partial => 'layouts/quickrates' %>
+               
+                <div id="hoax">
+                <h2>Phone Call &amp; Text Message Hoax</h2>
+                <p>If you have received an automated phone call or text message from One Vision FCU concerning suspicious activity on your debit card, <span class="bold">DISREGARD!</span> This message is <span class="bold">NOT</span> from One Vision and is an attempt to gain personal information from you. If you have entered your card number, please call us immediately so that we can block your card access and reissue a new card.</p>
+
+<p>One Vision Federal Credit Union will <span class="bold">NEVER</span> ask you for personal information and if ever in doubt please contact us or visit your nearest branch location.</p>
+                </div>
+
+    </div>
+</div>

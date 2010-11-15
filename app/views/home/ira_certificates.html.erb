@@ -1,0 +1,96 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+    <h2>Current Rates</h2>
+    <p>One Vision FCU offers the following competitive rates to our members (click for current rates): </p>
+   	<ul>
+    	<li><%= link_to "Share Rates", share_rates_path %></li>
+        <li><%= link_to "Share and IRA Certificates", ira_certificates_path %></li>
+        <li><%= link_to "Vision Starter Share Certificates", vision_certificates_path %></li>
+        <li><%= link_to "Loan Rates", auto_loans_path %>
+        	<ul>
+            	<li><%= link_to "Automobile Loans", auto_loans_path %></li>
+                <li><%= link_to "Motorcycles, Boats, RVs, Campers, ATV's, Jet Ski", vehicle_loans_path %></li>
+                <li><%= link_to "Real Estate Loans", home_loans_path %></li>
+                <li><%= link_to "Other Loans", other_loans_path %></li>
+            </ul>
+        </li>
+    </ul>
+    
+    <p>For important information about One Vision FCU dividend rates, see our <%= link_to "Truth in Savings Disclosure", truthinsavings_path %> &amp; <%= link_to "Fee Schedule", cufees_path %>.</p>
+	
+<!-- SHARE  IRA RATES -->
+    
+<table class="ratestable" cellpadding="0" cellspacing="0">
+    <tr>
+    	  <th colspan="4">Share and IRA Certificates</th>
+          </tr>
+        <tr>
+        	<td>Term</td>
+            <td>Minimum</td>
+            <td>Dividend Rate</td>
+            <td>Annual Percentage Yield</td>
+        </tr>
+        <tr>
+        	<td>6 Month</td>
+            <td>$500</td>
+            <td>0.60%</td>
+            <td>0.60%</td>
+        </tr>
+        <tr>
+        	<td>12 Month</td>
+            <td>$500</td>
+            <td>0.75%</td>
+            <td>0.75%</td>
+        </tr>
+        <tr>
+        	<td>18 Month</td>
+            <td>$500</td>
+            <td>0.80%</td>
+            <td>0.80%</td>
+        </tr>
+        <tr>
+        	<td>24 Month</td>
+            <td>$500</td>
+            <td>1.00%</td>
+            <td>1.00%</td>
+        </tr>
+        <tr>
+        	<td>30 Month</td>
+            <td>$500</td>
+            <td>1.10%</td>
+            <td>1.10% </td>            
+</tr>
+        <tr>
+        	<td>36 Month</td>        
+            <td>$500</td>
+            <td>1.49%</td>
+            <td>1.50% </td>
+        </tr>   
+        <tr>
+        	<td>48 Month</td>        
+      <td>$500</td>
+            <td>1.99%</td>
+            <td>2.00% </td>
+        </tr>    
+        <tr>
+        	<td>60 Month</td>        
+            <td>$500</td>
+            <td>2.13%</td>
+            <td>2.15% </td>
+        </tr>   
+       
+<tr>
+        	<td colspan="4" class="highlight">
+            <p>Rates and Terms are subject to change without notice.<br />
+              A penalty will be imposed for early withdrawals<br />
+			* Rates Shown are effective 10/26/2010</p>
+		  </td>
+        </tr>                                    
+    </table>
+        <!-- END SHARE IRA RATES -->
+	</div>
+    
+    <div id="inner_right">
+		<%= render :partial =>"layouts/quickrates" %>
+    </div>
+</div>

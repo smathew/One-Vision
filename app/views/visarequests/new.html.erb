@@ -1,0 +1,340 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+	  <div id="forms"> 
+	    <% form_for(@visarequest) do |f| %>
+		  <%= f.error_messages %>
+		  <h2>VISA Application</h2>
+                
+                <p>Please fill out the following application, then click on the submit button to start the process to receive a VISA&reg; credit card.</p>
+                <p class="redbold">When finished, print it out, sign it, and mail it to the above address or fax it to 1-812-945-4329. One Vision Federal Credit Union must have a signed copy on file in order to issue a credit card.</p>
+                <p>NOTE: One Vision has a secure site for protection and privacy.</p>
+                <table class="border">
+                    	<tr>
+                        	<td colspan="2" class="bold">PLEASE CHECK THE CORRECT BOXES. PROPERLY COMPLETED APPLICATIONS WILL ENSURE PROMPT EVALUATION.</td>
+                        </tr>
+                        <tr>
+                        	<td colspan="2"><%= check_box("visarequest", "visa_card_account", {}, "yes", "no")%> I/We wish to apply for a VISA&reg; CARD ACCOUNT. </td>
+                        </tr>
+                        <tr>
+                        	<td colspan="2"><%= f.radio_button("account_type", "Individual Account") %> Individual Account  <%= f.radio_button("account_type", "Joint Account") %> Joint Account</td>
+                        </tr>
+                        <tr>
+                        	<td colspan="2">
+                            <%= check_box("visarequest", "credit_increase_on_account", {}, "yes", "no")%> I/We wish to apply for a credit increase on my VISA&reg; CARD ACCOUNT
+                            <br /><span class="indent">Account Number: <%= f.text_field :account_number, :size => 16 %></span>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td>Credit Limit Request: <%= f.radio_button("credit_limit_increase", "Increase my credit limit by $500") %> $500   <%= f.radio_button("credit_limit_increase", "Increase my credit limit by $1,000") %> $1,000   <%= f.radio_button("credit_limit_increase", "Increase my credit limit by the amount specified") %> Other $ <%= f.text_field :other_credit_limit, :size => 10 %></td>
+                        </tr>
+                        <tr>
+                        	<td colspan="2" class="disclaimer">In this Application and Agreement the words "I" or "my" mean each person who applies for a VISA™ Credit Card or who signs the Agreement or who uses the VISA&reg; Credit Card or duplicate VISA&reg; Credit Card. The words "you" or "your" mean the One Vision Federal Credit Union or its successors or assigns.
+     The word "account" means my VISA&reg; Credit Card revolving credit account with One Vision Federal Credit Union . The word "Card" means my VISA&reg; Credit Card and duplicates of said Card.
+     By submitting this request, I hereby apply for a line of credit that I can use from time to time and which may be replenished by payments on amounts previously drawn. By submitting this Application and Agreement establishes my request for the issuance of a Card.</td>
+                        </tr>
+                    </table>					
+
+                    <table class="border">
+                    	<tr>
+                        	<td colspan="2" class="redbold">APPLICANT</td>
+                        </tr>
+                    	<tr>	
+                        	<td class="right">Name: <%= f.text_field :applicant_name, :size => 20 %></td>
+                            <td class="right">E-mail: <%= f.text_field :applicant_email_address, :size => 20 %></td>
+                        </tr>
+                        <tr>
+                        	<td class="right">Street Address: <%= f.text_field :applicant_address, :size => 20 %></td>
+                            <td class="right">City: <%= f.text_field :applicant_city, :size => 20 %></td>
+                        </tr>
+                        <tr>                        	
+                            <td class="right">State: <%= f.select( :applicant_state,
+								{ "Alabama" => "AL", 
+								  "Alaska" => "AK", 
+								  "Arizona" => "AZ", 
+								  "Arkansas" => "AR", 
+								  "California" => "CA", 
+								  "Colorado" => "CO",
+								  "Connecticut" => "CT", 
+								  "Delaware" => "DE", 
+								  "District Of Columbia" => "DC", 
+								  "Florida" => "FL", 
+								  "Georgia" => "GA", 
+								  "Hawaii" => "HI",
+								  "Idaho" => "ID", 
+								  "Illinois" => "IL", 
+								  "Indiana" => "IN", 
+								  "Iowa" => "IO", 
+								  "Kansas" => "KS", 
+								  "Kentucky" => "KY",
+								  "Louisiana" => "LA", 
+								  "Maine" => "ME", 
+								  "Maryland" => "MD", 
+								  "Massachusetts" => "MA", 
+								  "Michigan" => "MI", 
+								  "Minnesota" => "MN",
+								  "Mississippi" => "MS", 
+								  "Missouri" => "MO", 
+								  "Montana" => "MT", 
+								  "Nebraska" => "NE", 
+								  "Nevada" => "NV", 
+								  "New Hampshire" => "NH",
+								  "New Jersey" => "NJ", 
+								  "New Mexico" => "NM", 
+								  "New York" => "NY", 
+								  "North Carolina" => "NC", 
+								  "North Dakota" => "ND", 
+								  "Ohio" => "OH",
+								  "Oklahoma" => "OK", 
+								  "Oregon" => "OR", 
+								  "Pennsylvania" => "PA", 
+								  "Rhode Island" => "RI", 
+								  "South Carolina" => "SC", 
+								  "South Dakota" => "SD",
+								  "Tennessee" => "TN", 
+								  "Texas" => "TX", 
+								  "Utah" => "UT", 
+								  "Vermont" => "VT", 
+								  "Virginia" => "VA", 
+								  "Washington" => "WA",
+								  "West Virginia" => "WV",
+								  "Wisconsin" => "WI",
+								  "Wyoming" => "WY"
+								 }) %></td>
+								 <td class="right">Zip: <%= f.text_field :applicant_zip, :size => 20, :maxlength => 5 %>  						</td>
+                        </tr>
+                        <tr>
+                        	<td class="right">SSN: <%= f.text_field :applicant_ssn, :size => 20, :maxlength => 11 %></td>
+                            <td class="right">Home Phone: <%= f.text_field :applicant_home_phone, :size => 20, :maxlength => 12 %></td>
+                        </tr>
+                        <tr>
+                        	<td class="right">Work Phone: <%= f.text_field :applicant_work_phone, :size => 20, :maxlength => 12 %></td>
+                            <td class="right">Member Number: <%= f.text_field :applicant_member_number, :size => 20 %></td>
+                        </tr>
+                        <tr>
+                        	<td class="right">Birth Date: <%= f.text_field :applicant_date_of_birth, :size => 20, :maxlength => 10 %></td>
+                            <td class="right">&nbsp;</td>
+                        </tr>                        
+                        </table>
+
+                        <table class="border">
+                    	<tr>
+                        	<td colspan="2" class="redbold">JOINT APPLICANT</td>
+                        </tr>
+                    	<tr>	
+                        	<td class="right">Joint Name: <%= f.text_field :coapplicant_name, :size => 20 %></td>
+                            <td class="right">E-mail: <%= f.text_field :coapplicant_email_address, :size => 20 %></td>
+                        </tr>
+                        <tr>
+                        	<td class="right">Street Address: <%= f.text_field :coapplicant_address, :size => 20 %></td>
+                            <td class="right">City: <%= f.text_field :coapplicant_city, :size => 20 %></td>
+                        </tr>
+                        <tr>
+                            <td class="right">State: <%= f.select( :coapplicant_state,
+								{ "Alabama" => "AL", 
+								  "Alaska" => "AK", 
+								  "Arizona" => "AZ", 
+								  "Arkansas" => "AR", 
+								  "California" => "CA", 
+								  "Colorado" => "CO",
+								  "Connecticut" => "CT", 
+								  "Delaware" => "DE", 
+								  "District Of Columbia" => "DC", 
+								  "Florida" => "FL", 
+								  "Georgia" => "GA", 
+								  "Hawaii" => "HI",
+								  "Idaho" => "ID", 
+								  "Illinois" => "IL", 
+								  "Indiana" => "IN", 
+								  "Iowa" => "IO", 
+								  "Kansas" => "KS", 
+								  "Kentucky" => "KY",
+								  "Louisiana" => "LA", 
+								  "Maine" => "ME", 
+								  "Maryland" => "MD", 
+								  "Massachusetts" => "MA", 
+								  "Michigan" => "MI", 
+								  "Minnesota" => "MN",
+								  "Mississippi" => "MS", 
+								  "Missouri" => "MO", 
+								  "Montana" => "MT", 
+								  "Nebraska" => "NE", 
+								  "Nevada" => "NV", 
+								  "New Hampshire" => "NH",
+								  "New Jersey" => "NJ", 
+								  "New Mexico" => "NM", 
+								  "New York" => "NY", 
+								  "North Carolina" => "NC", 
+								  "North Dakota" => "ND", 
+								  "Ohio" => "OH",
+								  "Oklahoma" => "OK", 
+								  "Oregon" => "OR", 
+								  "Pennsylvania" => "PA", 
+								  "Rhode Island" => "RI", 
+								  "South Carolina" => "SC", 
+								  "South Dakota" => "SD",
+								  "Tennessee" => "TN", 
+								  "Texas" => "TX", 
+								  "Utah" => "UT", 
+								  "Vermont" => "VT", 
+								  "Virginia" => "VA", 
+								  "Washington" => "WA",
+								  "West Virginia" => "WV",
+								  "Wisconsin" => "WI",
+								  "Wyoming" => "WY"
+								 }) %> </td>
+									<td class="right">Zip: <%= f.text_field :coapplicant_zip, :size => 20, :maxlength => 5 %>  </td>
+                        </tr>
+                        <tr>
+                        	<td class="right">SSN: <%= f.text_field :coapplicant_ssn, :size => 20, :maxlength => 11 %></td>
+                            <td class="right">Home Phone: <%= f.text_field :coapplicant_home_phone, :size => 20, :maxlength => 12 %></td>
+                        </tr>
+                        <tr>
+                        	<td class="right">Work Phone: <%= f.text_field :coapplicant_work_phone, :size => 20, :maxlength => 12 %></td>
+                            <td class="right">Member Number: <%= f.text_field :coapplicant_member_number, :size => 20 %></td>
+                        </tr>    
+                        <tr>
+                        	<td class="right">Birth Date: <%= f.text_field :coapplicant_date_of_birth, :size => 20, :maxlength => 10 %></td>
+                            <td class="right">&nbsp;</td>
+                        </tr>                                             
+                        
+                    </table>
+                    
+                    <table class="border">
+                    	<tr>
+                        	<td class="redbold">APPLICANT INCOME</td>
+                            <td class="redbold">JOINT INCOME</td>
+                        </tr>
+                        <tr>
+                        	<td>&nbsp;&nbsp;Employer: <%= f.text_field :applicant_employer, :size => 20 %></td>
+                            <td>&nbsp;&nbsp;Employer: <%= f.text_field :coapplicant_employer, :size => 20 %></td>
+                        </tr>
+                        <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Income: <%= f.text_field :applicant_income, :size => 10, :maxlength => 10 %><%= f.radio_button("applicant_income_type", "Net") %> Net   <%= f.radio_button("applicant_income_type", "Gross") %> Gross
+                        <p class="radial">
+                            <%= f.radio_button("applicant_income_frequency", "Annual") %> Annual
+							<%= f.radio_button("applicant_income_frequency", "Monthly") %> Monthly  
+                            <%= f.radio_button("applicant_income_frequency", "Bi-Weekly") %> Bi-Weekly  <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<%= f.radio_button("applicant_income_frequency", "Weekly") %> Weekly</p></td>
+                            
+                           	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Income: <%= f.text_field :coapplicant_income, :size => 10, :maxlength => 10 %><%= f.radio_button("coapplicant_income_type", "Net") %> Net   <%= f.radio_button("coapplicant_income_type", "Gross") %> Gross
+                            <p class="radial">
+                            <%= f.radio_button("coapplicant_income_frequency", "Annually") %> Annual
+							<%= f.radio_button("coapplicant_income_frequency", "Monthly") %> Monthly  
+                            <%= f.radio_button("coapplicant_income_frequency", "Bi-Weekly") %> Bi-Weekly <br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<%= f.radio_button("coapplicant_income_frequency", "Weekly") %> Weekly</p></td>
+                        </tr>
+                        <tr>
+                        	<td>Other Income: (Notice: Alimony, child support <br />or separate maintenance income need not be revealed if you do not have it considered as a basis for repaying this obligation.)	
+                            <p>Source: <%= f.text_field :applicant_other_income_source, :size => 20 %></p>
+                            Amount: $ <%= f.text_field :applicant_other_income, :size => 15, :maxlength => 10 %>
+                            <br />
+                            <%= f.radio_button("applicant_other_income_frequency", "Annually") %> Annual   
+							<%= f.radio_button("applicant_other_income_frequency", "Monthly") %> Monthly   
+							<%= f.radio_button("applicant_other_income_frequency", "Hourly") %>Hourly   
+</td>
+                        	<td>Other Income: (Notice: Alimony, child support <br />or separate maintenance income need not be revealed if you do not have it considered as a basis for repaying this obligation.)	
+                            <p>Source: <%= f.text_field :coapplicant_other_income_source, :size => 20 %></p>Amount: $ <%= f.text_field :coapplicant_other_income, :size => 15, :maxlength => 10 %> <br />						  <%= f.radio_button("coapplicant_other_income_frequency", "Annually") %> Annual   
+							<%= f.radio_button("coapplicant_other_income_frequency", "Monthly") %> Monthly   
+							<%= f.radio_button("coapplicant_other_income_frequency", "Hourly") %>Hourly  
+							</td>
+                        </tr>
+                    </table>
+                    
+                    <table class="border signatures">
+                   	  <tr>
+                        	<td colspan="2"><p class="redbold center">SIGNATURES:</p>
+                            <p class="italic">I promise that all information is correct to the best of my knowledge. I authorize ONE VISION FEDERAL CREDIT UNION to obtain credit reports in connection with this application for credit and any update, renewal or extension of credit received. If I request, ONE VISION FEDERAL CREDIT UNION will tell me the name and address of any credit bureau from which it received a credit report on me. I understand that it is a federal crime to willfully and deliberately provide incomplete or incorrect information on loan applications made to Federal chartered credit unions insured by the National Credit Union Administration.</p>
+                            <p class="italic">I give you a security interest in all funds now or hereafter in my Share and Share Draft accounts associated with numbers ______________________ and I authorize you to apply any or all such funds to the payment of any amount ever in default on this account.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                        	<td><p class="center">___________________________________<br />Applicant</p></td>
+                            <td>_____ / _____ / _____ <br />Date</td>
+                        </tr>
+                        
+                        <tr>
+                        	<td><p class="center">___________________________________<br />Co-Applicant</p></td>
+                            <td>_____ / _____ / _____ <br />Date</td>
+                        </tr>
+                    </table>
+                    <p class="center">(Please click anywhere in the white field before you send this page to the printer.)</p>
+					<p class="center">Please call the Loan Department at 1-812-945-4600 on the following business day for status of your application.</p>
+                    <div class="center"><p><%= f.submit 'Submit Application' %> <input type="reset" value="Clear Form" /></p></div>
+
+                    
+                    <table class="border">
+                    <tr>
+                    <td>
+                    <h4>Line of Credit Agreement</h4>
+                    <ol>
+                    	<li>The purpose of this Application and Agreement (hereinafter "Agreement") is to establish the Terms and Conditions of a line of credit. </li>
+                        <li>Approval of this Agreement by you establishes the following: (a) the credit limit approved shall be determined by you and this credit limit will be drawn upon as I utilize an issued Card; (b) the account will be repaid in accordance with terms and conditions of VISA&reg; and in accordance with policies established by the Credit Union's Board of Directors (hereinafter "Directors"); (c) the Card remains your property and I will surrender it immediately upon request. The Terms and Conditions referred to herein are those that will be furnished to me before I have use of my Card. Said Terms and Conditions are made a part of this Agreement and are incorporated by reference herein. By my acceptance of the Card I hereby agree to comply with all the terms both in this Agreement and in the Terms and Conditions. In the event I do not wish to comply with the foregoing Terms and Conditions for any reason, I understand that I may terminate this Agreement by giving you written notice, and by returning the Card to you. </li>
+                        <li>I understand that you reserve the right to change the rate of FINANCE CHARGE upon giving written notice required by law. </li>
+                        <li>I promise to pay any and all charges incurred by me or any person whom I authorize to use the Card issued to me, and any fees or charges incurred in the recovery of a Card, retrieval of transaction data, collection of this account, or any other charges disclosed to me herein or in the Terms and Conditions provided prior to my use of the Card. I understand that you reserve the right to change the rate of fees and charges upon giving notice required by law. </li>
+                        <li>I acknowledge and agree that you may terminate this Agreement upon adverse re-evaluation of my credit worthiness, upon my failure to satisfy the terms of this Agreement and the Terms and Conditions established by the Directors and VISA™ U.S.A., Inc., or at my option or at your option if you have good cause. </li>
+                        <li>
+                        	
+                        	<table class="border loc">
+                            	<tr class="redbold">
+                                	<td>DESCRIPTION</td>
+                                    <td>VISA&reg; CLASSIC</td>
+                                </tr>
+                                <tr class="bold">
+                                	<td>ANNUAL PERCENTAGE RATE for Purchases and Cash Advances*</td>
+                                    <td class="large">8.9%</td>
+                                </tr>
+                                <tr>
+                                	<td>Grace Period For Repayment Of The Balance For Purchase</td>
+                                    <td>25 Days From Statement Closing Date</td>
+                                </tr>
+                                <tr>
+                                	<td>Method Of Computing The Balances For Purchase</td>
+                                    <td>Average Daily Balance <br />(Including New Purchase)</td>
+                                </tr>
+                                <tr>
+                                	<td>Annual Fees</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                	<td>Transaction Fee For Purchase</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                	<td>Minimum Finance Charge</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                	<td>Late Payment Fee</td>
+                                    <td>$20.00</td>
+                                </tr>  
+                                <tr>
+                                	<td>Fee For Exceeding Credit Limit</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                	<td>Return Check or Electronic Payment</td>
+                                    <td>$23.00</td>
+                                </tr>
+                                <tr>
+                                	<td colspan="2" class="disclaimer">
+                                    *The Annual Percentage Rate applicable to my account is determined by my personal credit history and will be disclosed to me on documents provided to me upon approval of my application. The daily periodic rate for my account will be determined by dividing the corresponding Annual Percentage Rate by 365 and rounding to the nearest 1/1000,000th of 1%, not to exceed applicable law. The information about the costs of the card described in the disclosure is accurate as of 02/02/2004. This information may have changed after that date. To find out what may have changed call us at (812) 945-4600. 
+                                    </td>
+                                </tr>                              
+                            </table>
+                        </li>
+                        <li>If I pay my balance in full within 25 days of the closing date of my statement, I pay no FINANCE CHARGE. The 25-day grace period does not apply to cash advances. </li>
+                    </ol>
+                    
+                    <p class="redbold">Important Information About Procedures For Or Opening A New Account</p>
+<p>To help the government fight the funding of terrorism and money laundering activities, Federal law requires all financial institutions to obtain, verify and record information that identifies each person who opens an account. What this means for me: When I apply for or open an account. I will be asked for my name, address, date of birth and other documentation that will allow you to identify me.  </p>
+                    
+                    </td>
+				</tr>
+			</table>
+		<% end %>
+	</div>
+</div>
+<div id="inner_right">
+	<%= render :partial => "layouts/quickrates" %>
+</div>
+</div>

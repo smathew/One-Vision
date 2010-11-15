@@ -1,0 +1,12 @@
+<div id="pagewrapper" class="clearfix">
+	<div id="inner_left">
+    <h2>FREE Share Draft (Checking) Account</h2>
+    <%= image_tag "checking.jpg", :class=>"photo3 fright", :alt=>"" %>
+   <p>Have you checked the amount of interest you have earned on that interest bearing checking account that you pay a monthly service fee to have? Chances are you are paying more than you are earning. At One Vision Federal Credit Union, our FREE Share Draft (Checking) Account has no monthly service fee and no minimum balance. We offer Direct Deposit, Free Online Banking, and Free Online Bill Pay. MasterMoney Debit Cards are available with our Share Draft Account to make purchases and withdraw from ATMs. Our Share Draft Account will save you money!</p>
+   
+   <p>Also with One Vision Federal Credit Union, you have access to thousands of <%= link_to "ATM Locations", atmloc_path %> nationwide via the Alliance One Network. You also have access to thousands of branches via the Shared Branch Network. Stop by any location or <%= link_to "contact us", contact_path %> today to learn more about making the switch. We make it easy! There is no reason not to make One Vision Federal Credit Union your primary financial institution. It’s where you belong!</p>
+  </div>
+    <div id="inner_right">
+		<%= render :partial => 'layouts/quickrates' %>
+    </div>
+</div>
